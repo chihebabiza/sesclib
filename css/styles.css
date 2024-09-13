@@ -4,13 +4,24 @@ body{
   font-style: normal;
   background-color: #F0F0F0;
   color: #333;
+  text-align: center;
 }
 h1, h2, h3 {
   font-family: 'Montserrat', sans-serif;
-  color: #004080; /* Deep blue for titles */
+  color: #004080;
 }
+/* container */
 .container-fluid{
     padding: 7% 15%;
+}
+/* sections */
+.colored-section{
+    background: linear-gradient(135deg, #3B5998, #8A2BE2);
+    color: white;
+}
+.white-section{
+    background-color: #ffffff;
+    color: #333333; 
 }
 /* navigation bar */
 .navbar{

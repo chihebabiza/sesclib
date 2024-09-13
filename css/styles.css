@@ -1,0 +1,51 @@
+body{
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  background-color: #F0F0F0;
+  color: #333;
+}
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+  color: #004080; /* Deep blue for titles */
+}
+.container-fluid{
+    padding: 7% 15%;
+}
+/* navigation bar */
+.navbar{
+    padding: 0.8% 5%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+}
+.navbar-brand{
+    font-family: "Ubuntu", system-ui;
+    font-size: 2rem;
+    font-weight: 600;
+    padding-right:3%;
+}
+.nav-btns{
+    margin-left:1.6%;
+}
+.log-btn:hover{
+    background-color:#442067;
+    color: white;
+    border: none;
+}
+.sign-btn{
+    background-color: #8A2BE2;
+    border: none;
+}
+.sign-btn:hover{
+    background-color: #442067;
+}
+/* Blue and Purple Color Palette
+Primary Color: Royal Blue (#3B5998)
+Secondary Color: Vivid Purple (#8A2BE2) 
+Accent Colors:
+Lavender (#E6E6FA) – for subtle background sections, creating a soft, calming feel.
+Dark Slate Grey (#2F4F4F) – for text and small accents, providing a nice contrast and ensuring readability.
+White (#FFFFFF) – for backgrounds, making content easy to read and clean. */

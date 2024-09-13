@@ -19,7 +19,7 @@ p{
 }
 /* container */
 .container-fluid{
-    padding: 7% 15%;
+    padding: 7% 12%;
 }
 /* sections */
 .colored-section{
@@ -27,7 +27,7 @@ p{
     color: white;
 }
 .white-section{
-    background-color: #ffffff;
+    background-color: #F0F0F0;
     color: #333333; 
 }
 /* navigation bar */
@@ -65,10 +65,21 @@ p{
     text-align: left;
 }
 .home-heading{
+   color: white;
    padding-top: 5%;
    font-size: 3.5rem;
    line-height: 1.5;
    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+/* search bar */
+.search-filter .btn-primary{
+    background-color: #4A90E2;
+    color: #ffffff;
+    border: none;
+}
+.search-filter .btn-primary:hover {
+    background-color: #f0f0f0;
+    color: #3B5998;
 }
 
 

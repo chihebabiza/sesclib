@@ -44,6 +44,13 @@ p{
     font-size: 2rem;
     font-weight: 600;
     padding-right:3%;
+    transition:0.5s ease ;
+    color: #3B5998;;
+    text-shadow: 1px 1px 4px rgba(138, 43, 226, 0.3);
+}
+.navbar-brand:hover{
+    transform: scale(1.1);
+    color: #442067;
 }
 .nav-btns{
     margin-left:1.6%;
@@ -60,6 +67,15 @@ p{
 .sign-btn:hover{
     background-color: #442067;
 }
+.nav-item .nav-link:hover,.nav-item .nav-link.active{
+    color:#5f0dab ;
+}
+.dropdown-item:hover{
+    color: #5f0dab;
+}
+.dropdown-item:focus {
+    background-color: transparent;
+}
 /* home */
 #home{
     text-align: left;
@@ -73,7 +89,7 @@ p{
 }
 /* search bar */
 .search-filter .btn-primary{
-    background-color: #4A90E2;
+    background-color: #3795BD;
     color: #ffffff;
     border: none;
 }

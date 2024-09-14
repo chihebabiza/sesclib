@@ -118,6 +118,18 @@ p{
     font-weight: 700;
     font-size: 1.8rem;
     color: #8A2BE2;
+    line-height: 1.5;
+}
+.club-content {
+    background-color: #ffffff;
+    padding: 2%;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    text-align: left;
+}
+.club-content:hover {
+    transform: scale(1.02);
 }
 
 

@@ -131,6 +131,26 @@ p{
 .club-content:hover {
     transform: scale(1.02);
 }
+/* contact section */
+#footer .container-fluid{
+    padding: 3% 12%;
+}
+.contact-icons a{
+    color: white;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2%;
+    transform: 2.3s ease;
+    text-decoration: none;
+}
+.contact-icons a i {
+    font-size: 2rem;
+}
+.contact-icons a:hover{
+    color:#3795BD;
+    transform: scale(1.3) translateY(-5px);
+}
 
 
 

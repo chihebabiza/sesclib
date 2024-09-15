@@ -110,7 +110,8 @@ p{
 /* spesialities section */
 .specialty-card {
     position: relative;
-    height: 250px;
+    height: 150px;
+    width: 220px;
     margin: 20px 0;
     background-color: #f5f5f5;
     border-radius: 10px;
@@ -125,35 +126,25 @@ p{
 }
 .specialty-image{
     position: absolute;
-    top: 0;
+    top: 0; 
     left: 0;
     height: 100%;
     width: 100%;
     object-fit: cover;
     /* opacity: 0.7; */
-}
-.specialty-card h3 {
+} 
+  .card-text{
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
+    color: white;
     font-size: 1.5rem;
-    font-weight: bold;
-    color: white;
+    font-weight: 800;
+    background-color: transparent;
+    border: none;
   }
-  
-  .specialty-card .btn {
-    position: absolute;
-    bottom: 10%;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 2;
-    background-color: #8A2BE2;
-    color: white;
-  }
-
-
 /* Club section */
 .club-title{
     font-weight: 900;

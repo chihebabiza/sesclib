@@ -146,6 +146,23 @@ p{
     background-color: #5f0dab; /* Change button color on hover */
 }
 /* resources section */
+.resources-col{
+    background-color: #ffffff;
+    padding: 3%;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    text-align: left;
+    width: 40%;
+    margin:3% 5%;
+    text-align: center;
+}
+.resources-heading{
+    color: #3B5998;
+}
+.resources-col:hover {
+    transform: scale(1.02);
+}
 /* Club section */
 .club-title{
     font-weight: 900;

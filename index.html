@@ -48,18 +48,10 @@
           <li class="nav-item">
             <a class="nav-link" href="#">About-sesc</a>
           </li>
-
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Specialities
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Computer Science</a></li>
-              <li><a class="dropdown-item" href="#">Mathematics</a></li>
-              <li><a class="dropdown-item" href="#">Chemistry</a></li>
-              <li><a class="dropdown-item" href="#">physics</a></li>
-            </ul>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Specialities</a>
           </li>
+
           <li class="nav-item">
             <a class="nav-link" href="#">Contact</a>
           </li>
@@ -71,18 +63,20 @@
     <!-- home -->
     <div class="container-fluid">
       <h1 class="home-heading">Empowering Your Academic Journey</h1>
-      <p>Access comprehensive resources tailored for Computer Science, Mathematics, Science of Matter, and Chemistry.
-      </p>
-      <!-- search bar -->
-      <div class="search-filter search-bar">
-        <form class="d-flex justify-content-center">
-          <input class="form-control me-2" type="search" placeholder="Search specialities" aria-label="Search">
-          <button class="btn btn-primary" type="submit">Search</button>
-        </form>
+      <div class="row">
+        <div class="col-lg-6">
+          <p>
+            Welcome to SESC-Lib, the official resource hub of the Setifian Scientific Club (SESC). Explore a wide range
+            of academic materials, including courses, TDs, and TPs, for students specializing in Computer Science,
+            Mathematics, Physics, and Chemistry. Empower your studies with curated resources tailored to your
+            educational needs.
+          </p>
+          <a href="#resources" class="cta-button btn btn-outline-light mt-4">Explore Resources</a>
+        </div>
+        <div class="col-lg-6">
+          <img src="images/home-img.jpg" alt="home-img" class="home-img">
+        </div>
       </div>
-
-      <a href="#resources" class="cta-button btn btn-outline-light mt-4">Explore Resources</a>
-    </div>
     </div>
   </section>
   <!-- Specialities Section -->
@@ -99,7 +93,7 @@
                 Computer Science
               </button>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" type="button" href="#cs-lmd-resources">LMD</a></li>
+                <li><a class="dropdown-item" type="button" href="cs-lmd.html">LMD</a></li>
                 <li><a class="dropdown-item" type="button" href="#cs-eng-resources">Engineering</a></li>
               </ul>
             </div>
@@ -132,209 +126,7 @@
   <!-- Resources Section -->
   <section id="resources" class="colored-section">
     <div class="container-fluid">
-      <h1 class="resources-title">Resources for Each Specialty</h1>
-      <div class="row">
-        <div id="cs-lmd-resources" class="col-lg-6 resources-col">
-          <h2 class="resources-heading">Computer Science <span class="cs-field">LMD</span></h2>
-          <ul class="list-group">
-            <li class="list-group-item"><a href="#" class="resources-link">First Year</a></li>
-            <li class="list-group-item"><a href="" class="resources-link">Second Year</a></li>
-            <li class="list-group-item"><a href="" class="resources-link">Third Year</a></li>
-            <li class="list-group-item">
-              <div class="dropdown">
-                <button class="btn dropdown-toggle resources-btn" type="button" data-bs-toggle="dropdown"
-                  aria-expanded="false">
-                  Fourth Year
-                </button>
-                <ul class="dropdown-menu">
-                  <li><button class="dropdown-item" type="button"><a href="#"
-                        class="resources-link">specility</a></button></li>
-                  <li><button class="dropdown-item" type="button"><a href="#"
-                        class="resources-link">specility</a></button></li>
-                  <li><button class="dropdown-item" type="button"><a href="#"
-                        class="resources-link">specility</a></button></li>
-                </ul>
-              </div>
-            </li>
-            <li class="list-group-item">
-              <div class="dropdown">
-                <button class="btn dropdown-toggle resources-btn" type="button" data-bs-toggle="dropdown"
-                  aria-expanded="false">
-                  Fifth Year
-                </button>
-                <ul class="dropdown-menu">
-                  <li><button class="dropdown-item" type="button"><a href="#"
-                        class="resources-link">specility</a></button></li>
-                  <li><button class="dropdown-item" type="button"><a href="#"
-                        class="resources-link">specility</a></button></li>
-                  <li><button class="dropdown-item" type="button"><a href="#"
-                        class="resources-link">specility</a></button></li>
-                </ul>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <div id="cs-eng-resources" class="col-lg-6 resources-col">
-          <h2 class="resources-heading">Computer Science <span class="cs-field">Engineering</span></h2>
-          <ul class="list-group">
-            <li class="list-group-item"><a href="#" class="resources-link">First Year</a></li>
-            <li class="list-group-item"><a href="#" class="resources-link">Second Year</a></li>
-            <li class="list-group-item"><a href="#" class="resources-link">Third Year</a></li>
-            <li class="list-group-item">
-              <div class="dropdown">
-                <button class="btn dropdown-toggle resources-btn" type="button" data-bs-toggle="dropdown"
-                  aria-expanded="false">
-                  Fourth Year
-                </button>
-                <ul class="dropdown-menu">
-                  <li><button class="dropdown-item" type="button"><a href="#"
-                        class="resources-link">specility</a></button></li>
-                  <li><button class="dropdown-item" type="button"><a href="#"
-                        class="resources-link">specility</a></button></li>
-                  <li><button class="dropdown-item" type="button"><a href="#"
-                        class="resources-link">specility</a></button></li>
-                </ul>
-              </div>
-            </li>
-            <li class="list-group-item">
-              <div class="dropdown">
-                <button class="btn dropdown-toggle resources-btn" type="button" data-bs-toggle="dropdown"
-                  aria-expanded="false">
-                  Fifth Year
-                </button>
-                <ul class="dropdown-menu">
-                  <li><button class="dropdown-item" type="button"><a href="#"
-                        class="resources-link">specility</a></button></li>
-                  <li><button class="dropdown-item" type="button"><a href="#"
-                        class="resources-link">specility</a></button></li>
-                  <li><button class="dropdown-item" type="button"><a href="#"
-                        class="resources-link">specility</a></button></li>
-                </ul>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <div id="maths-resources" class="col-lg-6 resources-col">
-          <h2 class="resources-heading">Mathematics</h2>
-          <ul class="list-group">
-            <li class="list-group-item"><a href="#" class="resources-link">First Year</a></li>
-            <li class="list-group-item"><a href="#" class="resources-link">Second Year</a></li>
-            <li class="list-group-item"><a href="#" class="resources-link">Third Year</a></li>
-            <li class="list-group-item">
-              <div class="dropdown">
-                <button class="btn dropdown-toggle resources-btn" type="button" data-bs-toggle="dropdown"
-                  aria-expanded="false">
-                  Fourth Year
-                </button>
-                <ul class="dropdown-menu">
-                  <li><button class="dropdown-item" type="button"><a href="#"
-                        class="resources-link">specility</a></button></li>
-                  <li><button class="dropdown-item" type="button"><a href="#"
-                        class="resources-link">specility</a></button></li>
-                  <li><button class="dropdown-item" type="button"><a href="#"
-                        class="resources-link">specility</a></button></li>
-                </ul>
-              </div>
-            </li>
-            <li class="list-group-item">
-              <div class="dropdown">
-                <button class="btn dropdown-toggle resources-btn" type="button" data-bs-toggle="dropdown"
-                  aria-expanded="false">
-                  Fifth Year
-                </button>
-                <ul class="dropdown-menu">
-                  <li><button class="dropdown-item" type="button"><a href="#"
-                        class="resources-link">specility</a></button></li>
-                  <li><button class="dropdown-item" type="button"><a href="#"
-                        class="resources-link">specility</a></button></li>
-                  <li><button class="dropdown-item" type="button"><a href="#"
-                        class="resources-link">specility</a></button></li>
-                </ul>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <div id="physics-resources" class="col-lg-6 resources-col">
-          <h2 class="resources-heading">Physics</h2>
-          <ul class="list-group">
-            <li class="list-group-item"><a href="#" class="resources-link">First Year</a></li>
-            <li class="list-group-item"><a href="#" class="resources-link">Second Year</a></li>
-            <li class="list-group-item"><a href="#" class="resources-link">Third Year</a></li>
-            <li class="list-group-item">
-              <div class="dropdown">
-                <button class="btn dropdown-toggle resources-btn" type="button" data-bs-toggle="dropdown"
-                  aria-expanded="false">
-                  Fourth Year
-                </button>
-                <ul class="dropdown-menu">
-                  <li><button class="dropdown-item" type="button"><a href="#"
-                        class="resources-link">specility</a></button></li>
-                  <li><button class="dropdown-item" type="button"><a href="#"
-                        class="resources-link">specility</a></button></li>
-                  <li><button class="dropdown-item" type="button"><a href="#"
-                        class="resources-link">specility</a></button></li>
-                </ul>
-              </div>
-            </li>
-            <li class="list-group-item">
-              <div class="dropdown">
-                <button class="btn dropdown-toggle resources-btn" type="button" data-bs-toggle="dropdown"
-                  aria-expanded="false">
-                  Fifth Year
-                </button>
-                <ul class="dropdown-menu">
-                  <li><button class="dropdown-item" type="button"><a href="#"
-                        class="resources-link">specility</a></button></li>
-                  <li><button class="dropdown-item" type="button"><a href="#"
-                        class="resources-link">specility</a></button></li>
-                  <li><button class="dropdown-item" type="button"><a href="#"
-                        class="resources-link">specility</a></button></li>
-                </ul>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <div id="chemistry-resources" class="col-lg-6 resources-col">
-          <h2 class="resources-heading">Chemistry</h2>
-          <ul class="list-group">
-            <li class="list-group-item"><a href="#" class="resources-link">First Year</a></li>
-            <li class="list-group-item"><a href="#" class="resources-link">Second Year</a></li>
-            <li class="list-group-item"><a href="#" class="resources-link">Third Year</a></li>
-            <li class="list-group-item">
-              <div class="dropdown">
-                <button class="btn dropdown-toggle resources-btn" type="button" data-bs-toggle="dropdown"
-                  aria-expanded="false">
-                  Forth Year
-                </button>
-                <ul class="dropdown-menu">
-                  <li><button class="dropdown-item" type="button"><a href="#"
-                        class="resources-link">specility</a></button></li>
-                  <li><button class="dropdown-item" type="button"><a href="#"
-                        class="resources-link">specility</a></button></li>
-                  <li><button class="dropdown-item" type="button"><a href="#"
-                        class="resources-link">specility</a></button></li>
-                </ul>
-              </div>
-            </li>
-            <li class="list-group-item">
-              <div class="dropdown">
-                <button class="btn dropdown-toggle resources-btn" type="button" data-bs-toggle="dropdown"
-                  aria-expanded="false">
-                  Fifth Year
-                </button>
-                <ul class="dropdown-menu">
-                  <li><button class="dropdown-item" type="button"><a href="#"
-                        class="resources-link">specility</a></button></li>
-                  <li><button class="dropdown-item" type="button"><a href="#"
-                        class="resources-link">specility</a></button></li>
-                  <li><button class="dropdown-item" type="button"><a href="#"
-                        class="resources-link">specility</a></button></li>
-                </ul>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
+
     </div>
   </section>
 

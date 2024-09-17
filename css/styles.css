@@ -16,6 +16,7 @@ p{
     line-height: 1.7;
     margin-bottom: 1.5rem;
     font-size: 1.2rem;
+    text-align: justify;
 }
 .white-section p {
     color: #4D4D4D;
@@ -89,23 +90,16 @@ p{
 .home-heading{
    color: white;
    padding-top: 5%;
-   font-size: 3.5rem;
+   font-size: 2.9rem;
    line-height: 1.5;
    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
    margin-bottom: 4%;
 }
-/* search bar */
-.search-filter .btn-primary{
-    background-color: #3795BD;
-    color: #ffffff;
-    border: none;
-}
-.search-filter .btn-primary:hover {
-    background-color: #f0f0f0;
-    color: #3B5998;
-}
-.search-bar{
-    margin-top: 5%;
+.home-img{
+    border-radius: 10%;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    margin-left: 10%;
 }
 /* spesialities section */
 .specialty-card {
@@ -252,6 +246,9 @@ text-align: center;
 .contact-icons a:hover{
     color:#3795BD;
     transform: scale(1.3) translateY(-5px);
+}
+.Copyright{
+    text-align: center;
 }
 
 

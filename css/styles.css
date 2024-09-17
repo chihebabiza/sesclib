@@ -218,7 +218,7 @@ text-align: center;
 }
 .club-content {
     background-color: #ffffff;
-    padding: 2%;
+    padding: 4%;
     border-radius: 15px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;

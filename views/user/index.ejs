@@ -1,0 +1,145 @@
+<%- include('../parts/head') %>
+    <!-- home section-->
+    <section class="colored-section" id="home">
+        <!-- navbar -->
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <a class="navbar-brand" href="https://taplink.cc/sesc">
+                <img src="images/sesclogo.png" alt="Logo" width="40" height="40" class="d-inline-block align-text-top">
+                Sesc-lib
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-underline">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About-sesc</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Specialities</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+                <button type="button" class="btn btn-outline-dark  ml-auto nav-btns log-btn">Log in</button>
+                <button type="button" class="btn btn-primary ml-auto nav-btns sign-btn">sign up</button>
+            </div>
+        </nav>
+        <!-- home -->
+        <div class="container-fluid">
+            <h1 class="home-heading">Empowering Your Academic Journey</h1>
+            <div class="row">
+                <div class="col-lg-6">
+                    <p>
+                        Welcome to SESC-Lib, the official resource hub of the Setifian Scientific Club (SESC). Explore a
+                        wide range
+                        of academic materials, including courses, TDs, and TPs, for students specializing in Computer
+                        Science,
+                        Mathematics, Physics, and Chemistry. Empower your studies with curated resources tailored to
+                        your
+                        educational needs.
+                    </p>
+                    <a href="#resources" class="cta-button btn btn-outline-light mt-4">Explore Resources</a>
+                </div>
+                <div class="col-lg-6">
+                    <img src="images/home-img.jpg" alt="home-img" class="home-img">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Specialities Section -->
+    <section id="specialities" class="white-section">
+        <div class="container-fluid">
+            <div class="row">
+                <!-- computer science card -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="specialty-card">
+                        <img src="images/cs3.jpeg" alt="Computer Science" class="specialty-image">
+                        <div class="dropdown">
+                            <button class="btn btn-primary specialty-button dropdown-toggle" type="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Computer Science
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" type="button" href="cs-lmd.html">LMD</a></li>
+                                <li><a class="dropdown-item" type="button" href="#cs-eng-resources">Engineering</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- maths card-->
+                <div class=" col-lg-3 col-md-6">
+                    <div class="specialty-card">
+                        <img src="images/maths3.jpeg" alt="maths" class="specialty-image">
+                        <a href="#maths-resources" class="btn btn-primary specialty-button">Mathematics</a>
+                    </div>
+                </div>
+                <!-- chemistry card-->
+                <div class=" col-lg-3 col-md-6">
+                    <div class="specialty-card">
+                        <img src="images/chemistry3.jpeg" alt="chemistry" class="specialty-image">
+                        <a href="#chemistry-resources" class="btn btn-primary specialty-button">Chemistry</a>
+                    </div>
+                </div>
+                <!-- physics card-->
+                <div class=" col-lg-3 col-md-6">
+                    <div class="specialty-card">
+                        <img src="images/physics3.jpeg" alt="physic" class="specialty-image">
+                        <a href="#physics-resources" class="btn btn-primary specialty-button">Physics</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Resources Section -->
+    <section id="resources" class="colored-section">
+        <div class="container-fluid">
+
+        </div>
+    </section>
+
+
+
+    <!-- Club Section -->
+    <section id="club" class="white-section">
+        <div class="container-fluid">
+            <div class="club-content">
+                <h2 class="club-title">About SESC</h2>
+                <h3 class="club-subtitle">Setifian Scientific Club: Nurturing Minds, Inspiring Growth</h3>
+                <p class="club-text">Created on April 29, 2013, at the Faculty of Sciences, University of Setif1, the
+                    Setifian
+                    Scientific Club (SESC) is a university club driven by the passion and curiosity of students from
+                    various
+                    scientific fields. Our mission is to enhance intellectual growth through exciting and informative
+                    experiences
+                    that complement academic studies.</p>
+                <ul>
+                    <li>
+                        <p class="club-text">The club fosters a vibrant community where students can explore their
+                            intellectual
+                            capabilities.</p>
+                    </li>
+                    <li>
+                        <p class="club-text">Members engage in various scientific and educational activities designed to
+                            inspire
+                            critical thinking, innovation, and collaboration.</p>
+                    </li>
+                    <li>
+                        <p class="club-text">SESC promotes the development of skills that extend beyond the classroom,
+                            offering
+                            experiences that are both instructive and fun.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- contact -->
+
+    <%- include('../parts/footer') %>

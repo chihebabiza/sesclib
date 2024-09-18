@@ -139,71 +139,6 @@ p{
 .specialty-button:hover {
     background-color: #5f0dab;
 }
-/* resources section */
-.resources-col{
-    background-color: #ffffff;
-    padding: 2%;
-    border-radius: 15px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
-    text-align: left;
-    width: 41%;
-    margin:3% 4%;
-    text-align: center;
-}
-.resources-col:hover {
-    transform: scale(1.02);
-}
-.list-group-item {
-    background-color: #ffffff;
-    padding: 10px 15px;
-}
-.resources-title{
-    font-size: 2.5rem;
-    font-weight: 900;
-    margin-bottom: 3%;
-    text-align: center;
-    color: #FFFFFF;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
-}
-.resources-heading{
-color: #3B5998;
-color: #3B5998;
-font-size: 2rem;
-font-weight: 700;
-margin-bottom: 3%;
-text-align: center; 
-}
-.cs-field{
-    font-weight: 600;
-    font-size: 1.5rem;
-    color: #8A2BE2;
-    line-height: 1.5;  
-}
-.resources-link{
-    font-family: "Ubuntu", system-ui;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 1.2rem;
-    text-decoration: none;
-    color: #4D4D4D;
-}
-.resources-link:hover{
-    color: #3795BD;
-}
-.resources-btn{
-    border: none;
-    background-color: #ffffff;
-    color: #4D4D4D;
-    font-family: "Ubuntu", system-ui;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 1.2rem;
-}
-.resources-btn:hover{
-    background-color: #ffffff;
-    color: #3795BD;
-}
 /* Club section */
 .club-title{
     font-size: 2.5rem;
@@ -250,13 +185,79 @@ text-align: center;
 .Copyright{
     text-align: center;
 }
+/* specilities pages */
+.speciality-home{
+    margin-bottom: 7%;
+}
+.speciality-page-title{
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.5;
+ 
+   color: #ffffff;
+  }
+.speciality-page-subtitle{
+    font-weight: 600;
+    font-size: 2rem;
+    color: #E6E6FA;
+    line-height: 1.5;  
+}
+/* Navigation Buttons for Years  */
+.years-btn{
+   background-color: #3795BD;
+    border-color: #3B5998;
+    border: none;
+    font-size: 1.1rem;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin: 5% 0;
+}
+.years-btn:hover{
+    background-color: #3B5998;
+    box-shadow: 0 0 10px #ffffff;
+}
+.years-btn:focus, 
+.years-btn:active {
+  outline: none;
+  box-shadow: 0 0 10px #3795BD;
+  background-color: #3B5998;
+  color: white;
+}
+.year-title{
+    color: #3B5998;
+}
+.semester-col{
+    background-color: #ffffff;
+    margin:4% 2% ;
+    width: 45%;
+    padding: 4%;
+    border-radius: 15px;
+    transition: transform 0.3s ease-in-out;
+}
+.semester-col:hover{
+    transform: scale(1.02);
+    box-shadow: 0 0 20px 5px rgba(141, 22, 201, 0.228);
 
-
-
-
-
-
-
+}
+.module-btn:hover{
+    background-color: #EDE7F6;
+}
+.module-btn:focus{
+    border: none;
+}
+hr {
+    border: none;
+    border-bottom: 3px solid #5f0dab;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-width:100%;
+}
+.Semester-title{
+    color: #5f0dab;
+    size: 1rem;
+    font-weight: 500;
+}
 
 
 

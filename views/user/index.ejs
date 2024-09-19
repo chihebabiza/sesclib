@@ -58,43 +58,31 @@
     <section id="specialities" class="white-section">
         <div class="container-fluid">
             <div class="row">
-                <!-- computer science card -->
-                <div class="col-lg-3 col-md-6">
-                    <div class="specialty-card">
-                        <img src="images/cs3.jpeg" alt="Computer Science" class="specialty-image">
-                        <div class="dropdown">
-                            <button class="btn btn-primary specialty-button dropdown-toggle" type="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Computer Science
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" type="button" href="cs-lmd.html">LMD</a></li>
-                                <li><a class="dropdown-item" type="button" href="#cs-eng-resources">Engineering</a></li>
-                            </ul>
+                <% majors.forEach(major=> { %>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="specialty-card">
+                            <img src="<%= major.image %>" alt="<%= major.name %>" class="specialty-image">
+
+                            <% if (major.cycle.includes('lmd') && major.cycle.includes('ing')) { %>
+                                <div class="dropdown">
+                                    <button class="btn btn-primary specialty-button dropdown-toggle" type="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        <%= major.name %>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" type="button" href="lmd.html">LMD</a></li>
+                                        <li><a class="dropdown-item" type="button"
+                                                href="engineering.html">Engineering</a></li>
+                                    </ul>
+                                </div>
+                                <% } else { %>
+                                    <a href="#" class="btn btn-primary specialty-button">
+                                        <%= major.name %>
+                                    </a>
+                                    <% } %>
                         </div>
                     </div>
-                </div>
-                <!-- maths card-->
-                <div class=" col-lg-3 col-md-6">
-                    <div class="specialty-card">
-                        <img src="images/maths3.jpeg" alt="maths" class="specialty-image">
-                        <a href="#maths-resources" class="btn btn-primary specialty-button">Mathematics</a>
-                    </div>
-                </div>
-                <!-- chemistry card-->
-                <div class=" col-lg-3 col-md-6">
-                    <div class="specialty-card">
-                        <img src="images/chemistry3.jpeg" alt="chemistry" class="specialty-image">
-                        <a href="#chemistry-resources" class="btn btn-primary specialty-button">Chemistry</a>
-                    </div>
-                </div>
-                <!-- physics card-->
-                <div class=" col-lg-3 col-md-6">
-                    <div class="specialty-card">
-                        <img src="images/physics3.jpeg" alt="physic" class="specialty-image">
-                        <a href="#physics-resources" class="btn btn-primary specialty-button">Physics</a>
-                    </div>
-                </div>
+                    <% }); %>
             </div>
         </div>
     </section>

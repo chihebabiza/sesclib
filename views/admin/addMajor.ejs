@@ -1,0 +1,17 @@
+<%- include('../parts/head') %>
+
+    <div class="container mt-5">
+        <h1>Add New Major</h1>
+        <form action="/dashboard/add-major" method="POST" enctype="multipart/form-data">
+            <label for="name">Major Name:</label>
+            <input type="text" name="name" required>
+
+            <label for="image">Upload Image:</label>
+            <input type="file" name="image" required>
+
+            <button type="submit">Add Major</button>
+        </form>
+    </div>
+    </body>
+
+    </html>

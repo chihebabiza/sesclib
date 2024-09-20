@@ -1,0 +1,20 @@
+<%- include('../parts/head') %>
+
+    <div class="container mt-5">
+        <h1>Update Major</h1>
+        <form action="/dashboard/update-major/<%= major._id %>" method="POST" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="name" class="form-label">Major Name</label>
+                <input type="text" class="form-control" id="name" name="name" value="<%= major.name %>" required>
+            </div>
+            <div class="mb-3">
+                <label for="image" class="form-label">Major Image</label>
+                <input type="file" class="form-control" id="image" name="image" accept="image/*">
+                <small class="form-text text-muted">Leave this empty if you don't want to update the image.</small>
+            </div>
+            <button type="submit" class="btn btn-primary">Update Major</button>
+        </form>
+    </div>
+    </body>
+
+    </html>

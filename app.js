@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // Use routes
 app.use('/', homeRoute);
-// app.use('/', adminRoute);
+app.use('/', adminRoute);
 
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);

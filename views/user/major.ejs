@@ -1,41 +1,26 @@
 <%- include('../parts/head') %>
 
-    <section class="colored-section">
+    <section class="colored-section" id="cs-lmd-home">
         <div class="container-fluid">
             <div class="speciality-home">
                 <h1 class="speciality-page-title">
                     <%= major.name %> Resources
                 </h1>
-                <!-- Navigation Buttons for Years -->
-                <div class="d-flex justify-content-center mb-4">
-                    <a href="#year1" class="btn btn-primary mx-2 years-btn">First Year</a>
-                    <a href="#year2" class="btn btn-primary mx-2 years-btn">Second Year</a>
-                    <a href="#year3" class="btn btn-primary mx-2 years-btn">Third Year</a>
-                    <a class="years-btn btn btn-primary mx-2 dropdown-toggle" href="#" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Fourth Year
-                    </a>
-                    <div class="dropdown">
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">speciality</a></li>
-                            <li><a class="dropdown-item" href="#">speciality</a></li>
-                            <li><a class="dropdown-item" href="#">speciality</a></li>
-                        </ul>
-                    </div>
-                    <a class="years-btn btn btn-primary mx-2 dropdown-toggle" href="#" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Fifth Year
-                    </a>
-                    <div class="dropdown">
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">speciality</a></li>
-                            <li><a class="dropdown-item" href="#">speciality</a></li>
-                            <li><a class="dropdown-item" href="#">speciality</a></li>
-                        </ul>
-                    </div>
+                <div class="d-flex justify-content-center flex-wrap mb-4 align-items-center">
+                    <% if (years && years.length) { %>
+                        <% years.forEach((year, index)=> { %>
+                            <a href="#year<%= index + 1 %>" class="btn btn-primary mx-2 years-btn">
+                                <%= year.name %>
+                            </a>
+                            <% }) %>
+                                <% } else { %>
+                                    <p>No years available</p>
+                                    <% } %>
                 </div>
             </div>
+        </div>
     </section>
+
     <section class="white-section">
         <div class="container-fluid">
             <!-- Year 1 -->
@@ -44,6 +29,8 @@
             <div class="row">
                 <!-- s1 -->
                 <div class="col-lg-6 semester-col">
+                    <h3 class="Semester-title">Semester 1</h3>
+                    <hr>
                     <ul class="list-group list-group-flush modules">
                         <li class="list-group-item">
                             <div class="dropdown">
@@ -124,11 +111,11 @@
                             </div>
                         </li>
                     </ul>
-                    <hr>
-                    <h3 class="Semester-title">Semester 1</h3>
                 </div>
                 <!-- s2 -->
                 <div class="col-lg-6 semester-col">
+                    <h3 class="Semester-title">Semester 2</h3>
+                    <hr>
                     <ul class="list-group list-group-flush modules">
                         <li class="list-group-item">
                             <div class="dropdown">
@@ -209,8 +196,6 @@
                             </div>
                         </li>
                     </ul>
-                    <hr>
-                    <h3 class="Semester-title">Semester 2</h3>
                 </div>
             </div>
 

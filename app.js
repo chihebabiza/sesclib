@@ -4,6 +4,7 @@ const PORT = process.env.PORT || 4000;
 require('dotenv').config();
 const homeRoute = require('./routes/home.route');
 const adminRoute = require('./routes/admin.route');
+
 // Set view engine
 app.set('view engine', 'ejs');
 app.use(express.static('public'));

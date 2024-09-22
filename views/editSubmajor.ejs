@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Submajor</title>
+    <link rel="stylesheet" href="/path/to/bootstrap.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Edit Submajor</h1>
+        <form action="/submajors/edit/<%= submajor._id %>" method="POST">
+            <div class="mb-3">
+                <label for="name" class="form-label">Submajor Name</label>
+                <input type="text" class="form-control" name="name" value="<%= submajor.name %>" required>
+            </div>
+            <div class="mb-3">
+                <label for="majorId" class="form-label">Select Major</label>
+                <select class="form-select" name="majorId" required>
+                    <% majors.forEach(major=> { %>
+                        <option value="<%= major._id %>" <%=major._id==submajor.majorId._id ? 'selected' : '' %>><%=
+                                major.name %>
+                        </option>
+                        <% }) %>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="yearIds" class="form-label">Select Years</label>
+                <select multiple class="form-select" name="yearIds" required>
+                    <% years.forEach(year=> { %>
+                        <option value="<%= year._id %>" <%=submajor.yearIds.some(y=> y._id.toString() ===
+                            year._id.toString()) ? 'selected' : '' %>><%= year.name %>
+                        </option>
+                        <% }) %>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Update Submajor</button>
+        </form>
+    </div>
+</body>
+
+</html>

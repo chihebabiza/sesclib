@@ -8,7 +8,6 @@ const majorControllers = require('../controllers/major.controllers');
 router.get('/dashboard/majors', adminControllers.getMajorsDashboard);
 router.get('/dashboard/update-major/:id', adminControllers.getUpdateMajor);
 router.get('/dashboard/add-major', adminControllers.getAddMajor);
-
 // Post requrest
 router.post('/dashboard/update-major/:id', upload.single('image'), majorControllers.updateMajor);
 router.post('/dashboard/add-major', upload.single('image'), majorControllers.addMajor);

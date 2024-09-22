@@ -1,4 +1,5 @@
 const Major = require('../models/major.model');
+const Year = require('../models/year.model');
 const { connectDB, disconnectDB } = require('../config/db');
 
 exports.getAllMajors = async () => {
@@ -13,13 +14,12 @@ exports.getAllMajors = async () => {
     }
 };
 
-exports.getMajorById = async (majorId) => {
+exports.getMajorById = async (id) => {
     try {
         await connectDB();
-        const major = await Major.findById(majorId).exec();
-        return major;
-    } catch (err) {
-        console.error('Error fetching major by ID:', err);
+        return await Major.findById(id) || null;
+    } catch (error) {
+        console.error('Error retrieving major by ID:', error);
     } finally {
         await disconnectDB();
     }
@@ -28,11 +28,10 @@ exports.getMajorById = async (majorId) => {
 exports.deleteMajor = async (req, res) => {
     try {
         await connectDB();
-        const majorId = req.params.id;
-        await Major.findByIdAndDelete(majorId);
+        await Major.findByIdAndDelete(req.params.id);
         res.redirect('/dashboard/majors');
-    } catch (err) {
-        console.error('Error deleting major:', err);
+    } catch (error) {
+        console.error('Error deleting major:', error);
         res.status(500).send('Server Error');
     } finally {
         await disconnectDB();
@@ -40,23 +39,14 @@ exports.deleteMajor = async (req, res) => {
 };
 
 exports.updateMajor = async (req, res) => {
-    await connectDB();
     try {
+        await connectDB();
         const { id } = req.params;
         const { name } = req.body;
         const image = req.file ? `/uploads/${req.file.filename}` : undefined;
 
-        const updateData = {
-            name,
-            ...(image && { image })
-        };
-
-        const updatedMajor = await Major.findByIdAndUpdate(id, updateData, { new: true });
-
-        if (!updatedMajor) {
-            req.flash('error', 'Major not found');
-            return res.redirect('/dashboard/majors');
-        }
+        const updatedMajor = await Major.findByIdAndUpdate(id, { name, ...(image && { image }) }, { new: true });
+        if (!updatedMajor) return res.redirect('/dashboard/majors');
 
         res.redirect('/dashboard/majors');
     } catch (error) {
@@ -68,21 +58,27 @@ exports.updateMajor = async (req, res) => {
 };
 
 exports.addMajor = async (req, res) => {
-    await connectDB();
     try {
+        await connectDB();
         const { name } = req.body;
         const image = req.file ? `/uploads/${req.file.filename}` : '';
-
-        const newMajor = new Major({
-            name,
-            image
-        });
-
+        const newMajor = new Major({ name, image });
         await newMajor.save();
         res.redirect('/dashboard/majors');
     } catch (error) {
         console.error('Error adding major:', error);
         res.redirect('/dashboard/majors');
+    } finally {
+        await disconnectDB();
+    }
+};
+
+exports.getYears = async () => {
+    try {
+        await connectDB();
+        return await Year.find({});
+    } catch (error) {
+        console.error('Error retrieving years:', error);
     } finally {
         await disconnectDB();
     }

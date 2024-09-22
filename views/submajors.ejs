@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submajors</title>
+    <link rel="stylesheet" href="/path/to/bootstrap.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .table th,
+        .table td {
+            vertical-align: middle;
+        }
+
+        .container {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="mb-4">Submajors</h1>
+        <a href="/submajors/add" class="btn btn-primary mb-3">Add Submajor</a>
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover">
+                <thead class="table-light">
+                    <tr>
+                        <th>Name</th>
+                        <th>Major</th>
+                        <th>Years</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% submajors.forEach(submajor=> { %>
+                        <tr>
+                            <td>
+                                <%= submajor.name %>
+                            </td>
+                            <td>
+                                <%= submajor.majorId.name %>
+                            </td>
+                            <td>
+                                <%= submajor.yearIds.map(year=> year.name).join(', ') %>
+                            </td>
+                            <td>
+                                <a href="/submajors/edit/<%= submajor._id %>" class="btn btn-warning btn-sm">Edit</a>
+                                <form action="/submajors/delete/<%= submajor._id %>" method="POST"
+                                    style="display:inline;">
+                                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                </form>
+                            </td>
+                        </tr>
+                        <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

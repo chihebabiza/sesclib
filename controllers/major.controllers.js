@@ -1,29 +1,7 @@
 const Major = require('../models/major.model');
-const Year = require('../models/year.model');
+const Submajor = require('../models/submajor.model');
 const { connectDB, disconnectDB } = require('../config/db');
-
-exports.getAllMajors = async () => {
-    try {
-        await connectDB();
-        return await Major.find({});
-    } catch (error) {
-        console.error('Error fetching majors:', error);
-        throw error;
-    } finally {
-        await disconnectDB();
-    }
-};
-
-exports.getMajorById = async (id) => {
-    try {
-        await connectDB();
-        return await Major.findById(id) || null;
-    } catch (error) {
-        console.error('Error retrieving major by ID:', error);
-    } finally {
-        await disconnectDB();
-    }
-};
+const Year = require('../models/year.model');
 
 exports.deleteMajor = async (req, res) => {
     try {
@@ -73,12 +51,47 @@ exports.addMajor = async (req, res) => {
     }
 };
 
-exports.getYears = async () => {
+exports.addSubmajor = async (req, res) => {
     try {
         await connectDB();
-        return await Year.find({});
+        const { name, majorId, years } = req.body;
+        const selectedYears = Array.isArray(years) ? years : [years]; // Ensure it's an array
+        const newSubmajor = new Submajor({ name, major: majorId, years: selectedYears });
+        await newSubmajor.save();
+        res.redirect('/dashboard/majors');
     } catch (error) {
-        console.error('Error retrieving years:', error);
+        console.error('Error adding submajor:', error);
+        res.status(500).send('Server Error');
+    } finally {
+        await disconnectDB();
+    }
+};
+
+exports.updateSubmajor = async (req, res) => {
+    try {
+        await connectDB();
+        const { id } = req.params;
+        const { name, majorId, years } = req.body;
+
+        await Submajor.findByIdAndUpdate(id, { name, major: majorId, years });
+        res.redirect('/dashboard/submajors');
+    } catch (error) {
+        console.error('Error updating submajor:', error);
+        res.status(500).send('Server Error');
+    } finally {
+        await disconnectDB();
+    }
+};
+
+exports.deleteSubmajor = async (req, res) => {
+    try {
+        await connectDB();
+        const { id } = req.params;
+        await Submajor.findByIdAndDelete(id);
+        res.redirect('/dashboard/submajors');
+    } catch (error) {
+        console.error('Error deleting submajor:', error);
+        res.status(500).send('Server Error');
     } finally {
         await disconnectDB();
     }

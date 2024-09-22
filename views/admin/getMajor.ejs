@@ -4,7 +4,7 @@
         <h1 class="mb-4">Majors Dashboard</h1>
 
         <!-- Button to Add New Major -->
-        <a href="/dashboard/add-major" class="btn btn-success mb-4">Add New Major</a>
+        <a href="/dashboard/major/add" class="btn btn-success mb-4">Add New Major</a>
 
         <table class="table table-bordered">
             <thead>
@@ -25,10 +25,10 @@
                         </td>
                         <td>
                             <!-- Update Button -->
-                            <a href="/dashboard/update-major/<%= major._id %>" class="btn btn-warning btn-sm">Update</a>
+                            <a href="/dashboard/major/update/<%= major._id %>" class="btn btn-warning btn-sm">Update</a>
 
                             <!-- Delete Button -->
-                            <form action="/dashboard/delete-major/<%= major._id %>" method="POST"
+                            <form action="/dashboard/major/delete/<%= major._id %>" method="POST"
                                 style="display:inline;">
                                 <button type="submit" class="btn btn-danger btn-sm"
                                     onclick="return confirm('Are you sure you want to delete this major?');">Delete</button>

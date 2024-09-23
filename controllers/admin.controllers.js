@@ -2,6 +2,7 @@ const Major = require('../models/major.model');
 const Year = require('../models/year.model');
 const Submajor = require('../models/submajor.model');
 const { connectDB, disconnectDB } = require('../config/db');
+const Type = require('../models/type.model');
 
 exports.getMajorsPage = async (req, res) => {
     try {
@@ -76,6 +77,23 @@ exports.getAddSubmajorPage = async (req, res) => {
         res.render('admin/addSubmajor', { majors, years });
     } catch (error) {
         console.error('Error fetching majors:', error);
+        res.status(500).send('Server Error');
+    } finally {
+        await disconnectDB();
+    }
+};
+
+exports.getAddSubjectPage = async (req, res) => {
+    try {
+        await connectDB();
+
+        const majors = await Major.find({});
+        const submajors = await Submajor.find({});
+        const years = await Year.find({});
+        const types = await Type.find({});
+        res.render('admin/addSubject', { majors, years, submajors, types });
+    } catch (error) {
+        console.error('Error fetching majors or years:', error);
         res.status(500).send('Server Error');
     } finally {
         await disconnectDB();

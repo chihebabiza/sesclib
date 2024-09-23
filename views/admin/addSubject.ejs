@@ -1,0 +1,96 @@
+<%- include('../parts/head') %>
+
+    <body>
+        <section class="colored-section" id="add-subject">
+            <div class="container-fluid min-vh-100">
+                <form action="/dashboard/subject/add" method="POST" class="mx-auto login-form form">
+                    <h4 class="form-heading">Add New Subject</h4>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">
+                            <i class="fa-solid fa-book"></i>
+                        </span>
+                        <input type="text" name="name" class="form-control" placeholder="Subject Name" required>
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">
+                            <i class="fa-solid fa-briefcase"></i>
+                        </span>
+                        <select id="majorSelect" name="majorId" class="form-control" required>
+                            <option selected disabled hidden>Select Major</option>
+                            <% majors.forEach(major=> { %>
+                                <option value="<%= major._id %>">
+                                    <%= major.name %>
+                                </option>
+                                <% }) %>
+                        </select>
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">
+                            <i class="fa-solid fa-calendar"></i>
+                        </span>
+                        <select id="yearSelect" name="yearId" class="form-control" required>
+                            <option selected disabled hidden>Select Year</option>
+                            <% years.forEach(year=> { %>
+                                <option value="<%= year._id %>">
+                                    <%= year.name %>
+                                </option>
+                                <% }) %>
+                        </select>
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">
+                            <i class="fa-solid fa-briefcase"></i>
+                        </span>
+                        <select id="yearSelect" name="yearId" class="form-control" required>
+                            <option selected disabled hidden>Select Submajor</option>
+                            <% submajors.forEach(submajor=> { %>
+                                <option value="<%= submajor._id %>">
+                                    <%= submajor.name %>
+                                </option>
+                                <% }) %>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <span class="input-group-text">
+                            <i class="fa-solid fa-calendar"></i>
+                        </span>
+                        <div class="form-control">
+                            <label class="h6 fw-bold">Select Types:</label>
+                            <ul class="list-unstyled">
+                                <% types.forEach(type=> { %>
+                                    <li>
+                                        <input type="checkbox" name="types[]" value="<%= type._id %>"
+                                            id="type-<%= type.name %>">
+                                        <label for="type-<%= type.name %>">
+                                            <%= type.name %>
+                                        </label>
+                                    </li>
+                                    <% }); %>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">
+                            <i class="fa-solid fa-book-open"></i>
+                        </span>
+                        <select name="semester" class="form-control" required>
+                            <option selected disabled hidden>Select Semester</option>
+                            <option value="Semester 1">Semester 1</option>
+                            <option value="Semester 2">Semester 2</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary login-btn">Add Subject</button>
+                    <p class="form-text">Want to go back? <a href="/dashboard/subjects" class="form-link">View
+                            Subjects</a></p>
+                </form>
+            </div>
+        </section>
+    </body>
+
+    </html>

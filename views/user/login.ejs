@@ -1,0 +1,29 @@
+<%- include('../parts/head') %>
+
+    <body>
+        <section class="colored-section" id="login">
+            <div class="container-fluid min-vh-100">
+                <form class="mx-auto login-form form">
+                    <h4 class="form-heading">Log In</h4>
+                    <div class="input-group">
+                        <span class="input-group-text">
+                            <i class="fa-solid fa-envelope"></i>
+                        </span>
+                        <input type="email" class="form-control" placeholder="Email address" required>
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-text">
+                            <i class="fa-solid fa-lock"></i>
+                        </span>
+                        <input type="password" class="form-control" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary login-btn">Login</button>
+                    <p class="form-text">Don't have an account? <a href="/register" class="form-link">Sign
+                            up</a>
+                    </p>
+                </form>
+            </div>
+        </section>
+    </body>
+
+    </html>

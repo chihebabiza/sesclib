@@ -57,7 +57,9 @@ exports.getUpdateSubmajorPage = async (req, res) => {
         const majorId = req.params.id;
         await connectDB();
         const submajor = await Submajor.findById(majorId);
-        res.render('admin/updateSubmajor', { submajor });
+        const majors = await Major.find({});
+        const years = await Year.find({});
+        res.render('admin/updateSubmajor', { submajor, majors, years });
     } catch (err) {
         console.error('Error fetching submajor:', err);
         res.status(500).send('Server Error');

@@ -1,16 +1,18 @@
 <%- include('../parts/head') %>
 
     <body>
-        <section class="colored-section" id="signup">
+        <section class="colored-section" id="update-submajor">
             <div class="container-fluid min-vh-100">
-                <form class="mx-auto login-form form" action="/dashboard/submajor/add" method="POST">
-                    <h4 class="form-heading">Add New Submajor</h4>
+                <form class="mx-auto login-form form" action="/dashboard/submajor/update/<%= submajor._id %>"
+                    method="POST">
+                    <h4 class="form-heading">Update Submajor</h4>
 
-                    <div class="input-group">
+                    <div class="input-group mb-3">
                         <span class="input-group-text">
-                            <i class="fa-solid fa-user"></i>
+                            <i class="fa-solid fa-tag"></i>
                         </span>
-                        <input type="text" name="name" class="form-control" placeholder="Submajor name" required>
+                        <input type="text" name="name" class="form-control" placeholder="Submajor Name"
+                            value="<%= submajor.name %>" required>
                     </div>
 
                     <div class="input-group">
@@ -20,14 +22,15 @@
                         <select name="majorId" class="form-control" required>
                             <option selected disabled hidden>Select your specialty</option>
                             <% majors.forEach(major=> { %>
-                                <option value="<%= major._id %>">
+                                <option value="<%= major._id %>" <%=major._id.toString()===submajor.major.toString()
+                                    ? 'selected' : '' %> >
                                     <%= major.name %>
                                 </option>
                                 <% }) %>
                         </select>
                     </div>
 
-                    <div class="input-group">
+                    <div class="input-group mb-3">
                         <span class="input-group-text">
                             <i class="fa-solid fa-calendar"></i>
                         </span>
@@ -37,7 +40,8 @@
                                 <% years.forEach(year=> { %>
                                     <li>
                                         <input type="checkbox" name="years" value="<%= year._id %>"
-                                            id="year-<%= year.name %>">
+                                            id="year-<%= year.name %>" <%=submajor.years.includes(year._id) ? 'checked'
+                                            : '' %> >
                                         <label for="year-<%= year.name %>">
                                             <%= year.name %>
                                         </label>
@@ -47,7 +51,7 @@
                         </div>
                     </div>
 
-                    <button type="submit" class="btn btn-primary login-btn">Add Submajor</button>
+                    <button type="submit" class="btn btn-primary login-btn">Update Submajor</button>
                     <p class="form-text">Want to go back? <a href="/dashboard/submajors" class="form-link">View
                             Submajors</a></p>
                 </form>

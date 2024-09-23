@@ -1,24 +1,40 @@
 <%- include('../parts/head') %>
 
-    <div class="container mt-5">
-        <h1>Update Major</h1>
-        <% if (major) { %>
-            <form action="/dashboard/major/update/<%= major._id %>" method="POST" enctype="multipart/form-data">
-                <div class="mb-3">
-                    <label for="name" class="form-label">Major Name</label>
-                    <input type="text" class="form-control" id="name" name="name" value="<%= major.name %>" required>
-                </div>
-                <div class="mb-3">
-                    <label for="image" class="form-label">Major Image</label>
-                    <input type="file" class="form-control" id="image" name="image">
-                </div>
-                <button type="submit" class="btn btn-primary">Update Major</button>
-            </form>
-            <% } else { %>
-                <p>Major not found.</p>
-                <% } %>
-    </div>
+    <body>
+        <section class="colored-section" id="update-major">
+            <div class="container-fluid min-vh-100">
+                <% if (major) { %>
+                    <form action="/dashboard/major/update/<%= major._id %>" method="POST" enctype="multipart/form-data"
+                        class="mx-auto login-form form">
+                        <h4 class="form-heading">Update Major</h4>
+                        <!-- Major Name Input -->
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                            </span>
+                            <input type="text" class="form-control" id="name" name="name" value="<%= major.name %>"
+                                required>
+                        </div>
 
+                        <!-- Major Image Input -->
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">
+                                <i class="fa-solid fa-image"></i>
+                            </span>
+                            <input type="file" class="form-control" id="image" name="image">
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="btn btn-primary login-btn">Update Major</button>
+                        <p class="form-text">Want to go back? <a href="/dashboard/majors" class="form-link">View
+                                Majors</a>
+                        </p>
+                    </form>
+                    <% } else { %>
+                        <p>Major not found.</p>
+                        <% } %>
+            </div>
+        </section>
     </body>
 
     </html>

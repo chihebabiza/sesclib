@@ -1,7 +1,6 @@
 const Major = require('../models/major.model');
 const Submajor = require('../models/submajor.model');
 const { connectDB, disconnectDB } = require('../config/db');
-const Year = require('../models/year.model');
 
 exports.deleteMajor = async (req, res) => {
     try {
@@ -55,10 +54,13 @@ exports.addSubmajor = async (req, res) => {
     try {
         await connectDB();
         const { name, majorId, years } = req.body;
-        const selectedYears = Array.isArray(years) ? years : [years]; // Ensure it's an array
+
+        console.log('Received:', { name, majorId, years });
+
+        const selectedYears = Array.isArray(years) ? years : [years];
         const newSubmajor = new Submajor({ name, major: majorId, years: selectedYears });
         await newSubmajor.save();
-        res.redirect('/dashboard/majors');
+        res.redirect('/dashboard/submajors');
     } catch (error) {
         console.error('Error adding submajor:', error);
         res.status(500).send('Server Error');

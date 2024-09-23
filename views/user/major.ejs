@@ -47,53 +47,33 @@
                         </h2>
                         <hr>
 
-                        <!-- Semesters 1 and 2 -->
                         <div class="row">
-                            <!-- Semester 1 -->
-                            <div class="col-lg-6 semester-col">
-                                <h3 class="Semester-title">Semester 1</h3>
-                                <hr>
-                                <ul class="list-group list-group-flush modules">
-                                    <% for (let i=0; i < 6; i++) { %> <!-- Loop for Semester 1 modules -->
-                                        <li class="list-group-item">
-                                            <div class="dropdown">
-                                                <button class="btn w-100 module-btn" type="button"
-                                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                                    Module <%= i + 1 %>
-                                                </button>
-                                                <ul class="dropdown-menu w-100 module-dropdown">
-                                                    <li><a class="dropdown-item" href="#">Courses</a></li>
-                                                    <li><a class="dropdown-item" href="#">TDs</a></li>
-                                                    <li><a class="dropdown-item" href="#">TPs</a></li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                        <% } %>
-                                </ul>
-                            </div>
+                            <% year.semester.forEach(semester=> { %>
 
-                            <!-- Semester 2 -->
-                            <div class="col-lg-6 semester-col">
-                                <h3 class="Semester-title">Semester 2</h3>
-                                <hr>
-                                <ul class="list-group list-group-flush modules">
-                                    <% for (let i=0; i < 6; i++) { %> <!-- Loop for Semester 2 modules -->
-                                        <li class="list-group-item">
-                                            <div class="dropdown">
-                                                <button class="btn w-100 module-btn" type="button"
-                                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                                    Module <%= i + 1 %>
-                                                </button>
-                                                <ul class="dropdown-menu w-100 module-dropdown">
-                                                    <li><a class="dropdown-item" href="#">Courses</a></li>
-                                                    <li><a class="dropdown-item" href="#">TDs</a></li>
-                                                    <li><a class="dropdown-item" href="#">TPs</a></li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                        <% } %>
-                                </ul>
-                            </div>
+                                <div class="col-lg-6 semester-col">
+                                    <h3 class="Semester-title">
+                                        <%= semester %>
+                                    </h3>
+                                    <hr>
+                                    <ul class="list-group list-group-flush modules">
+                                        <% for (let i=0; i < 6; i++) { %> <!-- Loop for Semester 1 modules -->
+                                            <li class="list-group-item">
+                                                <div class="dropdown">
+                                                    <button class="btn w-100 module-btn" type="button"
+                                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                                        Module <%= i + 1 %>
+                                                    </button>
+                                                    <ul class="dropdown-menu w-100 module-dropdown">
+                                                        <li><a class="dropdown-item" href="#">Courses</a></li>
+                                                        <li><a class="dropdown-item" href="#">TDs</a></li>
+                                                        <li><a class="dropdown-item" href="#">TPs</a></li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <% } %>
+                                    </ul>
+                                </div>
+                                <% }) %>
                         </div> <!-- End row -->
                         <% }) %>
                             <% } else { %>
@@ -106,50 +86,31 @@
                                 <!-- Semesters 1 and 2 for Year without Submajors -->
                                 <div class="row">
                                     <!-- Semester 1 -->
-                                    <div class="col-lg-6 semester-col">
-                                        <h3 class="Semester-title">Semester 1</h3>
-                                        <hr>
-                                        <ul class="list-group list-group-flush modules">
-                                            <% for (let i=0; i < 6; i++) { %>
-                                                <li class="list-group-item">
-                                                    <div class="dropdown">
-                                                        <button class="btn w-100 module-btn" type="button"
-                                                            data-bs-toggle="dropdown" aria-expanded="false">
-                                                            Module <%= i + 1 %>
-                                                        </button>
-                                                        <ul class="dropdown-menu w-100 module-dropdown">
-                                                            <li><a class="dropdown-item" href="#">Courses</a></li>
-                                                            <li><a class="dropdown-item" href="#">TDs</a></li>
-                                                            <li><a class="dropdown-item" href="#">TPs</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </li>
-                                                <% } %>
-                                        </ul>
-                                    </div>
-
-                                    <!-- Semester 2 -->
-                                    <div class="col-lg-6 semester-col">
-                                        <h3 class="Semester-title">Semester 2</h3>
-                                        <hr>
-                                        <ul class="list-group list-group-flush modules">
-                                            <% for (let i=0; i < 6; i++) { %>
-                                                <li class="list-group-item">
-                                                    <div class="dropdown">
-                                                        <button class="btn w-100 module-btn" type="button"
-                                                            data-bs-toggle="dropdown" aria-expanded="false">
-                                                            Module <%= i + 1 %>
-                                                        </button>
-                                                        <ul class="dropdown-menu w-100 module-dropdown">
-                                                            <li><a class="dropdown-item" href="#">Courses</a></li>
-                                                            <li><a class="dropdown-item" href="#">TDs</a></li>
-                                                            <li><a class="dropdown-item" href="#">TPs</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </li>
-                                                <% } %>
-                                        </ul>
-                                    </div>
+                                    <% year.semester.forEach(semester=> { %>
+                                        <div class="col-lg-6 semester-col">
+                                            <h3 class="Semester-title">
+                                                <%= semester %>
+                                            </h3>
+                                            <hr>
+                                            <ul class="list-group list-group-flush modules">
+                                                <% for (let i=0; i < 6; i++) { %>
+                                                    <li class="list-group-item">
+                                                        <div class="dropdown">
+                                                            <button class="btn w-100 module-btn" type="button"
+                                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                                                Module <%= i + 1 %>
+                                                            </button>
+                                                            <ul class="dropdown-menu w-100 module-dropdown">
+                                                                <li><a class="dropdown-item" href="#">Courses</a></li>
+                                                                <li><a class="dropdown-item" href="#">TDs</a></li>
+                                                                <li><a class="dropdown-item" href="#">TPs</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </li>
+                                                    <% } %>
+                                            </ul>
+                                        </div>
+                                        <% }) %>
                                 </div> <!-- End row -->
                                 <% } %>
                                     <% }) %>

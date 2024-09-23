@@ -1,34 +1,39 @@
 <%- include('../parts/head') %>
 
     <div class="container mt-5">
-        <h1 class="mb-4">Majors Dashboard</h1>
+        <h1 class="mb-4">Submajors Dashboard</h1>
 
         <!-- Button to Add New Major -->
-        <a href="/dashboard/major/add" class="btn btn-success mb-4">Add New Major</a>
+        <a href="/dashboard/submajor/add" class="btn btn-success mb-4">Add New Submajor</a>
 
         <table class="table table-bordered">
             <thead>
                 <tr>
                     <th>#</th>
+                    <th>Submajor Name</th>
                     <th>Major Name</th>
                     <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
-                <% majors.forEach((major, index)=> { %>
+                <% submajors.forEach((submajor, index)=> { %>
                     <tr>
                         <td>
                             <%= index + 1 %>
                         </td>
                         <td>
-                            <%= major.name %>
+                            <%= submajor.name %>
+                        </td>
+                        <td>
+                            <%= submajor.major.name %>
                         </td>
                         <td>
                             <!-- Update Button -->
-                            <a href="/dashboard/major/update/<%= major._id %>" class="btn btn-warning btn-sm">Update</a>
+                            <a href="/dashboard/submajor/update/<%= submajor._id %>"
+                                class="btn btn-warning btn-sm">Update</a>
 
                             <!-- Delete Button -->
-                            <form action="/dashboard/major/delete/<%= major._id %>" method="POST"
+                            <form action="/dashboard/submajor/delete/<%= submajor._id %>" method="POST"
                                 style="display:inline;">
                                 <button type="submit" class="btn btn-danger btn-sm"
                                     onclick="return confirm('Are you sure you want to delete this major?');">Delete</button>

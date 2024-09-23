@@ -4,6 +4,8 @@ const PORT = process.env.PORT || 4000;
 require('dotenv').config();
 const homeRoute = require('./routes/home.route');
 const adminRoute = require('./routes/admin.route');
+const Year = require('./models/year.model');
+const { connectDB } = require('./config/db');
 
 // Set view engine
 app.set('view engine', 'ejs');

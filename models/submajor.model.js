@@ -10,7 +10,11 @@ const submajorSchema = new mongoose.Schema({
         ref: 'Major',
         required: true
     },
-    years: [String]
+    years: {
+        type: [mongoose.Schema.Types.ObjectId],
+        ref: 'Year',
+        required: true
+    }
 });
 
 const Submajor = mongoose.model('Submajor', submajorSchema);

@@ -1,0 +1,37 @@
+<%- include('../parts/head') %>
+
+    <body>
+        <section class="colored-section" id="add-major">
+            <div class="container-fluid min-vh-100">
+                <!-- Add New Major Form -->
+                <form action="/dashboard/major/add" method="POST" enctype="multipart/form-data"
+                    class="mx-auto login-form form">
+                    <h4 class="form-heading">Add New Major</h4>
+
+                    <!-- Major Name Input -->
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </span>
+                        <input type="text" name="name" class="form-control" placeholder="Major Name" required>
+                    </div>
+
+                    <!-- Image Upload Input -->
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">
+                            <i class="fa-solid fa-image"></i>
+                        </span>
+                        <input type="file" name="image" class="form-control" required>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn btn-primary login-btn">Add Major</button>
+                    <p class="form-text">Want to go back? <a href="/dashboard/majors" class="form-link">View
+                            Majors</a>
+                    </p>
+                </form>
+            </div>
+        </section>
+    </body>
+
+    </html>

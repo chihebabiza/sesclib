@@ -1,0 +1,39 @@
+<%- include('../parts/head') %>
+    <%- include('../parts/navAdmin') %>
+
+        <div class="container mt-5">
+            <h1 class="mb-4">Users Dashboard</h1>
+
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Full Name</th>
+                        <th>Email</th>
+                        <th>Specialty</th>
+                        <th>Type</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% users.forEach((user, index)=> { %>
+                        <tr>
+                            <td>
+                                <%= index + 1 %>
+                            </td>
+                            <td>
+                                <%= user.name %>
+                            </td>
+                            <td>
+                                <%= user.email %>
+                            </td>
+                            <td>
+                                <%= user.specialty.name %>
+                            </td>
+                            <td>
+                                <%= user.type %>
+                            </td>
+                        </tr>
+                        <% }) %>
+                </tbody>
+            </table>
+        </div>

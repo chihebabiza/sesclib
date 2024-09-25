@@ -1,0 +1,21 @@
+[{
+  "_id": {
+    "$oid": "66f1d7d0df76883edd27d3eb"
+  },
+  "name": "Courses",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f1d7d0df76883edd27d3ec"
+  },
+  "name": "TDs",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f1d7d0df76883edd27d3ed"
+  },
+  "name": "TPs",
+  "__v": 0
+}]

@@ -1,0 +1,40 @@
+[{
+  "_id": {
+    "$oid": "66ec6e08aa82da4e8940fddb"
+  },
+  "image": "/uploads/images/1726817192392.jpeg",
+  "name": "Computer Science LMD",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66ec6e08aa82da4e8940fddc"
+  },
+  "image": "/uploads/images/1726817192392.jpeg",
+  "name": "Computer Science ING",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66ec6e08aa82da4e8940fddd"
+  },
+  "image": "/uploads/images/1726817294056.jpeg",
+  "name": "Chemistry",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66ec6e08aa82da4e8940fdde"
+  },
+  "image": "/uploads/images/1726817300855.jpeg",
+  "name": "Physics",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66ec8cbaed727714ae4697c4"
+  },
+  "image": "/uploads/images/1726817270789.jpeg",
+  "name": "Mathematics",
+  "__v": 0
+}]

@@ -1,0 +1,73 @@
+<%- include('../parts/head') %>
+
+    <body>
+        <section class="colored-section" id="signup">
+            <div class="container-fluid min-vh-100">
+                <form class="mx-auto login-form form" method="POST" action="/register">
+                    <h4 class="form-heading">Sign Up</h4>
+                    <% if (success.length> 0) { %>
+                        <div class="alert alert-success">
+                            <%= success %>
+                        </div>
+                        <% } %>
+
+                            <% if (error.length> 0) { %>
+                                <div class="alert alert-danger">
+                                    <%= error %>
+                                </div>
+                                <% } %>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="input-group">
+                                                <span class="input-group-text">
+                                                    <i class="fa-solid fa-user"></i>
+                                                </span>
+                                                <input type="text" class="form-control" placeholder="First name"
+                                                    name="firstName" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" placeholder="Last name"
+                                                    name="lastName" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-group-text">
+                                            <i class="fa-solid fa-envelope"></i>
+                                        </span>
+                                        <input type="email" class="form-control" placeholder="Email address"
+                                            name="email" required>
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-group-text">
+                                            <i class="fa-solid fa-briefcase"></i>
+                                        </span>
+                                        <select class="form-control" name="specialty" required>
+                                            <option value="" selected disabled hidden>Select your specialty</option>
+                                            <% majors.forEach(major=> { %>
+                                                <option value="<%= major._id %>">
+                                                    <%= major.name %>
+                                                </option>
+                                                <% }) %>
+                                        </select>
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-group-text">
+                                            <i class="fa-solid fa-lock"></i>
+                                        </span>
+                                        <input type="password" class="form-control" placeholder="Password"
+                                            name="password" required>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary login-btn">Sign Up</button>
+                                    <p class="form-text">Already have an account? <a href="/login" class="form-link">Log
+                                            In</a></p>
+                                    <p class="form-text">Want to go back? <a href="/" class="form-link">Back to
+                                            Home</a></p>
+                </form>
+            </div>
+        </section>
+    </body>
+
+    </html>

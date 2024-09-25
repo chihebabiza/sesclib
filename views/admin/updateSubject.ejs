@@ -1,17 +1,18 @@
 <%- include('../parts/head') %>
 
     <body>
-        <section class="colored-section" id="add-subject">
+        <section class="colored-section" id="update-subject">
             <div class="container-fluid min-vh-100">
-                <form action="/dashboard/major/<%= major._id %>/year/<%= year._id%>/subject/add" method="POST"
-                    class="mx-auto login-form form">
-                    <h4 class="form-heading">Add New Subject</h4>
+                <form action="/dashboard/major/<%= major._id %>/year/<%= year._id %>/subject/update/<%= subject._id %>"
+                    method="POST" class="mx-auto login-form form">
+                    <h4 class="form-heading">Update Subject</h4>
 
                     <div class="input-group mb-3">
                         <span class="input-group-text">
                             <i class="fa-solid fa-book"></i>
                         </span>
-                        <input type="text" name="name" class="form-control" placeholder="Subject Name" required>
+                        <input type="text" name="name" class="form-control" placeholder="Subject Name"
+                            value="<%= subject.name %>" required>
                     </div>
 
                     <div class="input-group">
@@ -24,7 +25,8 @@
                                 <% types.forEach(type=> { %>
                                     <li>
                                         <input type="checkbox" name="types[]" value="<%= type._id %>"
-                                            id="type-<%= type._id %>">
+                                            id="type-<%= type._id %>" <%=subject.types.includes(type._id) ? 'checked'
+                                            : '' %>>
                                         <label for="type-<%= type._id %>">
                                             <%= type.name %>
                                         </label>
@@ -40,12 +42,14 @@
                         </span>
                         <select name="semester" class="form-control" required>
                             <option selected disabled hidden>Select Semester</option>
-                            <option value="Semester 1">Semester 1</option>
-                            <option value="Semester 2">Semester 2</option>
+                            <option value="Semester 1" <%=subject.semester==='Semester 1' ? 'selected' : '' %>>Semester
+                                1</option>
+                            <option value="Semester 2" <%=subject.semester==='Semester 2' ? 'selected' : '' %>>Semester
+                                2</option>
                         </select>
                     </div>
 
-                    <button type="submit" class="btn btn-primary login-btn">Add Subject</button>
+                    <button type="submit" class="btn btn-primary login-btn">Update Subject</button>
                     <p class="form-text">Want to go back? <a href="/dashboard/subjects" class="form-link">View
                             Subjects</a></p>
                 </form>

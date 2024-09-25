@@ -51,16 +51,14 @@ exports.addMajor = async (req, res) => {
 };
 
 exports.addSubmajor = async (req, res) => {
+    const majorId = req.params.id;
+    const { name, years } = req.body;
+
     try {
         await connectDB();
-        const { name, majorId, years } = req.body;
-
-        console.log('Received:', { name, majorId, years });
-
-        const selectedYears = Array.isArray(years) ? years : [years];
-        const newSubmajor = new Submajor({ name, major: majorId, years: selectedYears });
+        const newSubmajor = new Submajor({ name, major: majorId, years });
         await newSubmajor.save();
-        res.redirect('/dashboard/submajors');
+        res.redirect(`/dashboard/major/${majorId}/years`);
     } catch (error) {
         console.error('Error adding submajor:', error);
         res.status(500).send('Server Error');
@@ -70,13 +68,13 @@ exports.addSubmajor = async (req, res) => {
 };
 
 exports.updateSubmajor = async (req, res) => {
+    const submajorId = req.params.id;
+    const { name, years, major } = req.body;
+
     try {
         await connectDB();
-        const { id } = req.params;
-        const { name, majorId, years } = req.body;
-
-        await Submajor.findByIdAndUpdate(id, { name, major: majorId, years });
-        res.redirect('/dashboard/submajors');
+        await Submajor.findByIdAndUpdate(submajorId, { name, major, years }, { new: true });
+        res.redirect(`/dashboard/major/${major}/years`);
     } catch (error) {
         console.error('Error updating submajor:', error);
         res.status(500).send('Server Error');
@@ -86,11 +84,22 @@ exports.updateSubmajor = async (req, res) => {
 };
 
 exports.deleteSubmajor = async (req, res) => {
+    const { id } = req.params;
+
     try {
         await connectDB();
-        const { id } = req.params;
+
+        const submajor = await Submajor.findById(id);
+
+        if (!submajor) {
+            return res.status(404).send('Submajor not found');
+        }
+
+        const { major } = submajor;
+
         await Submajor.findByIdAndDelete(id);
-        res.redirect('/dashboard/submajors');
+
+        res.redirect(`/dashboard/major/${major}/years`);
     } catch (error) {
         console.error('Error deleting submajor:', error);
         res.status(500).send('Server Error');

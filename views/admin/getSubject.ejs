@@ -1,0 +1,62 @@
+<%- include('../parts/head') %>
+
+    <div class="container mt-5">
+        <h1 class="mb-4">
+            <%= major.name %> Subjects
+                <% if (year) { %> for <%= year.name %>
+                        <% } %>
+                            <% if (submajor) { %> - Submajor <%= submajor.name %>
+                                    <% } %>
+        </h1>
+        <div class="container my-5">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb p-3 bg-body-tertiary rounded-3">
+                    <li class="breadcrumb-item"><a href="/dashboard/majors">Majors</a></li>
+                    <li class="breadcrumb-item"><a href="/dashboard/major/<%= major._id %>/years">Submajors</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Subjects</li>
+                </ol>
+            </nav>
+        </div>
+        <a href="/dashboard/major/<%= major._id %>/year/<%= year._id%>/subject/add" class="btn btn-success mb-4">Add
+            Subject</a>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Subject Name</th>
+                    <th>Semester</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if (subjects.length> 0) { %>
+                    <% subjects.forEach(subject=> { %>
+                        <tr>
+                            <td>
+                                <%= subject.name %>
+                            </td>
+                            <td>
+                                <%= subject.semester %>
+                            </td>
+                            <td>
+                                <a href="/dashboard/major/<%= major._id %>/year/<%= year._id %>/subject/update/<%= subject._id %>"
+                                    class="btn btn-warning btn-sm">Update</a>
+                                <form
+                                    action="/dashboard/major/<%= major._id %>/year/<%= year._id %>/subject/delete/<%= subject._id %>"
+                                    method="POST" style="display:inline;">
+                                    <button type="submit" class="btn btn-danger btn-sm"
+                                        onclick="return confirm('Are you sure you want to delete this subject?');">Delete</button>
+                                </form>
+                                <a href="/dashboard/subject/<%= subject._id %>/documents"
+                                    class="btn btn-info btn-sm">View
+                                    Documents</a>
+                            </td>
+                        </tr>
+                        <% }); %>
+                            <% } else { %>
+                                <tr>
+                                    <td colspan="3">No subjects available</td>
+                                </tr>
+                                <% } %>
+            </tbody>
+        </table>
+    </div>

@@ -1,0 +1,65 @@
+<%- include('../parts/head') %>
+
+    <body>
+        <div class="container mt-5">
+            <h1 class="mb-4">Documents for Subject: <%= subject.name %>
+            </h1>
+            <div class="container my-5">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb p-3 bg-body-tertiary rounded-3">
+                        <li class="breadcrumb-item"><a href="/dashboard/majors">Majors</a></li>
+                        <li class="breadcrumb-item"><a
+                                href="/dashboard/major/<%= subject.major._id %>/years">Submajors</a></li>
+                        <li class="breadcrumb-item"><a
+                                href="/dashboard/major/<%= subject.major._id %>/year/<%= subject.year._id%>/subjects">Subjects</a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">Documents</li>
+                    </ol>
+                </nav>
+            </div>
+            <a href="/dashboard/major/<%= subject.major._id %>/year/<%= subject.year._id%>/subject/add"
+                class="btn btn-success mb-4">Add
+                Document</a>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">Title</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if (documents.length> 0) { %>
+                        <% documents.forEach(document=> { %>
+                            <tr>
+                                <td>
+                                    <%= document.name %>
+                                </td>
+                                <td>
+                                    <%= document.type.name %>
+                                </td>
+                                <td>
+                                    <form action="/dashboard/document/update/<%= document._id %>" method="GET"
+                                        style="display:inline;">
+                                        <button type="submit" class="btn btn-warning btn-sm">Update</button>
+                                    </form>
+                                    <form action="/dashboard/document/delete/<%= document._id %>" method="POST"
+                                        style="display:inline;">
+                                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                    </form>
+                                    <a href="<%= document.path %>" target="_blank" class="btn btn-info btn-sm">View</a>
+                                </td>
+                            </tr>
+                            <% }) %>
+                                <% } else { %>
+                                    <tr>
+                                        <td colspan="3" class="text-center">No documents found for this subject.
+                                        </td>
+                                    </tr>
+                                    <% } %>
+                </tbody>
+            </table>
+        </div>
+    </body>
+
+    </html>

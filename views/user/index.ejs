@@ -1,5 +1,5 @@
 <%- include('../parts/head') %>
-    <!-- home section-->
+    <!-- home section -->
     <section class="colored-section" id="home">
         <!-- navbar -->
         <%- include('../parts/nav') %>
@@ -10,24 +10,23 @@
                     <div class="col-lg-6">
                         <p>
                             Welcome to SESC-Lib, the official resource hub of the Setifian Scientific Club (SESC).
-                            Explore a
-                            wide range
-                            of academic materials, including courses, TDs, and TPs, for students specializing in
-                            Computer
-                            Science,
-                            Mathematics, Physics, and Chemistry. Empower your studies with curated resources tailored to
-                            your
-                            educational needs.
+                            Explore a wide range of academic materials, including courses, TDs, and TPs, for students
+                            specializing in
+                            Computer Science, Mathematics, Physics, and Chemistry. Empower your studies with curated
+                            resources tailored to
+                            your educational needs.
                         </p>
-                        <a href="#resources" class="cta-button btn btn-outline-light mt-4">Explore Resources</a>
+                        <a href="/resources" class="cta-button btn btn-outline-light mt-4">Explore Resources</a>
                     </div>
                     <div class="col-lg-6">
-                        <img src="images/home-img.jpg" alt="home-img" class="home-img">
+                        <img src="images/home-img.jpg" alt="home-img" class="home-img img-fluid">
+                        <!-- Added img-fluid class -->
                     </div>
                 </div>
             </div>
     </section>
-    <!-- Specialities Section -->
+
+    <!-- Specialties Section -->
     <section id="resources" class="white-section">
         <div class="container-fluid">
             <div class="row">
@@ -35,7 +34,8 @@
                     <div class="col-lg-3 col-md-6">
                         <div class="specialty-card">
                             <a href="/major/<%= major._id %>">
-                                <img src="<%= major.image %>" alt="<%= major.name %>" class="specialty-image">
+                                <img src="<%= major.image %>" alt="<%= major.name %>" class="specialty-image img-fluid">
+                                <!-- Added img-fluid class -->
                             </a>
                             <a class="btn btn-primary specialty-button">
                                 <%= major.name %>
@@ -46,7 +46,41 @@
             </div>
         </div>
     </section>
-    <!-- Resources Section -->
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="colored-section">
+        <div id="testimonials-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-pause="hover">
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="6000">
+                    <i class="fa-solid fa-quote-left quote-icon"></i>
+                    <h2 class="testimonial-text">"The well-organized resources on SESC-Lib have significantly improved
+                        my study routine. I can easily access all the materials I need."</h2>
+                    <em>Lina M., Chemistry, 1st Year</em>
+                </div>
+                <div class="carousel-item" data-bs-interval="5000">
+                    <i class="fa-solid fa-quote-left quote-icon"></i>
+                    <h2 class="testimonial-text">"Thanks to SESC-Lib, I’ve been able to find the resources I need
+                        quickly and
+                        efficiently. It’s an essential tool for students."</h2>
+                    <em>Yassine A., Mathematics, 3rd Year</em>
+                </div>
+                <div class="carousel-item" data-bs-interval="5000">
+                    <i class="fa-solid fa-quote-left quote-icon"></i>
+                    <h2 class="testimonial-text">"With SESC-Lib, I’ve never had to worry about finding the right study
+                        materials. The tailored content for each field is what students need."</h2>
+                    <em>Nour K., Computer Science, 2nd Year</em>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#testimonials-carousel"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#testimonials-carousel"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </section>
 
     <!-- Club Section -->
     <section id="club" class="white-section">

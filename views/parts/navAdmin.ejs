@@ -16,17 +16,15 @@
                 <a class="<%= page === 'majors' ? 'nav-link active' : 'nav-link' %>" href="/dashboard/majors">Majors</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/dashboard/users">Users</a>
+                <a class="<%= page === 'users' ? 'nav-link active' : 'nav-link' %>" href="/dashboard/users">Users</a>
             </li>
         </ul>
-        <button type="button" class="btn btn-danger ml-auto nav-btns">Logout</button>
+        <a href="/dashboard/logout" class="btn btn-outline-danger ml-auto nav-btns log-out-btn">Log out</a>
     </div>
 </nav>
 
-<!-- Add padding to body to avoid content hiding under navbar -->
 <style>
     body {
         padding-top: 80px;
-        /* Adjust the padding based on the height of your navbar */
     }
 </style>

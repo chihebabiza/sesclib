@@ -5,15 +5,50 @@ const Type = require('../models/type.model');
 const Subject = require('../models/subject.model');
 const Document = require('../models/document.model');
 const { connectDB, disconnectDB } = require('../config/db');
+const User = require('../models/user.model');
 
 exports.getDashboard = async (req, res) => {
     try {
-        res.render('admin/dashboard', { page: 'admin' });
+        await connectDB()
+        const userCount = await User.countDocuments();
+
+        const documentCount = await Document.countDocuments();
+
+        const majorCount = await Major.countDocuments();
+
+        const submajorCount = await Submajor.countDocuments();
+
+        res.render('admin/dashboard', {
+            page: 'admin',
+            userCount,
+            documentCount,
+            majorCount,
+            submajorCount
+        });
     } catch (error) {
         console.error('Error opening dashboard:', error);
         res.status(500).send('Server Error');
+    } finally {
+        await disconnectDB();
     }
-}
+};
+
+exports.getUsersDashboard = async (req, res) => {
+    try {
+        await connectDB();
+        const users = await User.find().populate('specialty');
+        console.log(users);
+        res.render('admin/getUser', {
+            page: 'users',
+            users
+        });
+    } catch (error) {
+        console.error('Error fetching users:', error);
+        res.status(500).send('Server Error');
+    } finally {
+        await disconnectDB();
+    }
+};
 
 exports.getMajorsPage = async (req, res) => {
     try {
@@ -216,26 +251,78 @@ exports.getDocuments = async (req, res) => {
     try {
         await connectDB();
 
-        const { subjectId } = req.params; 
-        console.log('subjectId', subjectId);
+        const { subjectId } = req.params;
 
         const subject = await Subject.findById(subjectId)
-            .populate('major') 
-            .populate('year');  
+            .populate('major')
+            .populate('year');
 
-        console.log('subject ', subject);
 
         if (!subject) {
             return res.status(404).send('Subject not found');
         }
 
         const documents = await Document.find({ subject: subjectId }).populate('type');
-        console.log('documents', documents);
 
         res.render('admin/getDocument', { documents, subject });
     } catch (error) {
         console.error('Error fetching documents:', error);
         res.redirect(`/dashboard/subject/${req.params.subjectId}/documents?error=FetchDocumentsError`);
+    } finally {
+        await disconnectDB();
+    }
+};
+
+exports.getAddDocumentPage = async (req, res) => {
+    try {
+        await connectDB();
+        const { subjectId } = req.params;
+
+        const subject = await Subject.findById(subjectId)
+            .populate('types')
+
+        if (!subject) {
+            return res.status(404).send('Subject not found');
+        }
+
+        res.render('admin/addDocument', {
+            subject,
+            types: subject.types,
+        });
+    } catch (error) {
+        console.error('Error fetching subject or types:', error);
+        res.redirect(`/dashboard/subject/${req.params.subjectId}/documents?error=FetchError`);
+    } finally {
+        await disconnectDB();
+    }
+};
+
+exports.getUpdateDocumentPage = async (req, res) => {
+    try {
+        await connectDB();
+        const { subjectId, id } = req.params;
+
+        const subject = await Subject.findById(subjectId)
+            .populate('types');
+
+        if (!subject) {
+            return res.status(404).send('Subject not found');
+        }
+
+        const document = await Document.findById(id).populate('type');
+
+        if (!document) {
+            return res.status(404).send('Document not found');
+        }
+        console.log(subject, document);
+
+        res.render('admin/updateDocument', {
+            subject,
+            document,
+        });
+    } catch (error) {
+        console.error('Error fetching subject or document:', error);
+        res.redirect(`/dashboard/subject/${req.params.subjectId}/documents?error=FetchError`);
     } finally {
         await disconnectDB();
     }

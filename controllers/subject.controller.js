@@ -1,6 +1,5 @@
 const Subject = require("../models/subject.model");
 const { connectDB, disconnectDB } = require("../config/db");
-const Submajor = require("../models/submajor.model");
 
 exports.addSubject = async (req, res) => {
     try {

@@ -38,7 +38,7 @@ exports.addMajor = async (req, res) => {
     try {
         await connectDB();
         const { name } = req.body;
-        const image = req.file ? `/uploads/${req.file.filename}` : '';
+        const image = req.file ? `/uploads/images/${req.file.filename}` : ''; 
         const newMajor = new Major({ name, image });
         await newMajor.save();
         res.redirect('/dashboard/majors');

@@ -1,8 +1,8 @@
 <%- include('../parts/head') %>
+    <%- include('../parts/nav') %>
 
-    <section class="colored-section" id="cs-lmd-home">
-        <div class="container-fluid">
-            <div class="speciality-home">
+        <section class="colored-section" id="cs-lmd-home">
+            <div class="container-fluid mt-5">
                 <h1 class="speciality-page-title">
                     <%= major.name %> Resources
                 </h1>
@@ -32,97 +32,97 @@
                                     <% }) %>
                 </div>
             </div>
-        </div>
-    </section>
+            </div>
+        </section>
 
-    <section class="white-section">
-        <div class="container-fluid">
-            <% years.forEach(year=> { %>
-                <% if (year.hasSubmajors.length> 0) { %>
-                    <% year.hasSubmajors.forEach(submajor=> { %>
-                        <h2 class="year-title" id="submajor<%= year._id %>-<%= submajor._id %>">
-                            <%= year.name %> - <%= submajor.name %>
-                        </h2>
-                        <hr>
+        <section class="white-section">
+            <div class="container-fluid">
+                <% years.forEach(year=> { %>
+                    <% if (year.hasSubmajors.length> 0) { %>
+                        <% year.hasSubmajors.forEach(submajor=> { %>
+                            <h2 class="year-title" id="submajor<%= year._id %>-<%= submajor._id %>">
+                                <%= year.name %> - <%= submajor.name %>
+                            </h2>
+                            <hr>
 
-                        <div class="row">
-                            <% year.semester.forEach(semester=> { %>
-                                <div class="col-lg-6 semester-col">
-                                    <h3 class="Semester-title">
-                                        <%= semester %>
-                                    </h3>
-                                    <hr>
-                                    <ul class="list-group list-group-flush modules">
-                                        <% submajor.subjects.forEach(subject=> { %>
-                                            <% if (subject.semester===semester) { %>
-                                                <li class="list-group-item">
-                                                    <div class="dropdown">
-                                                        <button class="btn w-100 module-btn" type="button"
-                                                            data-bs-toggle="dropdown" aria-expanded="false">
-                                                            <%= subject.name %>
-                                                        </button>
-                                                        <ul class="dropdown-menu w-100 module-dropdown">
-                                                            <% subject.types.forEach(type=> { %>
-                                                                <li><a class="dropdown-item"
-                                                                        href="/major/<%= majorId%>/documents/<%= type.name %>/<%= subject._id %>">
-                                                                        <%= type %>
-                                                                    </a></li>
-                                                                <% }); %>
-                                                        </ul>
-                                                    </div>
-                                                </li>
-                                                <% } %>
-                                                    <% }); %>
-                                    </ul>
-                                </div>
-                                <% }); %>
-                        </div>
-                        <% }); %>
-                            <% } else { %>
-                                <h2 class="year-title" id="year<%= year._id %>">
-                                    <%= year.name %>
-                                </h2>
-                                <hr>
-
-                                <div class="row">
-                                    <% year.semester.forEach(semester=> { %>
-                                        <div class="col-lg-6 semester-col">
-                                            <h3 class="Semester-title">
-                                                <%= semester %>
-                                            </h3>
-                                            <hr>
-                                            <ul class="list-group list-group-flush modules">
-                                                <% year.subjects.forEach(subject=> { %>
-                                                    <% if (subject.semester===semester) { %>
-                                                        <li class="list-group-item">
-                                                            <div class="dropdown">
-                                                                <button class="btn w-100 module-btn" type="button"
-                                                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                                                    <%= subject.name %>
-                                                                </button>
-                                                                <ul class="dropdown-menu w-100 module-dropdown">
-                                                                    <% subject.types.forEach(type=> { %>
-                                                                        <li>
-                                                                            <a class="dropdown-item"
-                                                                                href="/major/<%= majorId%>/documents/<%= type.name %>/<%= subject._id %>">
-                                                                                <%= type.name %>
-                                                                            </a>
-                                                                        </li>
-                                                                        <% }); %>
-                                                                </ul>
-                                                            </div>
-                                                        </li>
-                                                        <% } %>
-                                                            <% }); %>
-                                            </ul>
-                                        </div>
-                                        <% }); %>
-                                </div>
-                                <% } %>
+                            <div class="row">
+                                <% year.semester.forEach(semester=> { %>
+                                    <div class="col-lg-6 semester-col">
+                                        <h3 class="Semester-title">
+                                            <%= semester %>
+                                        </h3>
+                                        <hr>
+                                        <ul class="list-group list-group-flush modules">
+                                            <% submajor.subjects.forEach(subject=> { %>
+                                                <% if (subject.semester===semester) { %>
+                                                    <li class="list-group-item">
+                                                        <div class="dropdown">
+                                                            <button class="btn w-100 module-btn" type="button"
+                                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                                                <%= subject.name %>
+                                                            </button>
+                                                            <ul class="dropdown-menu w-100 module-dropdown">
+                                                                <% subject.types.forEach(type=> { %>
+                                                                    <li><a class="dropdown-item"
+                                                                            href="/major/<%= majorId%>/documents/<%= type.name %>/<%= subject._id %>">
+                                                                            <%= type %>
+                                                                        </a></li>
+                                                                    <% }); %>
+                                                            </ul>
+                                                        </div>
+                                                    </li>
+                                                    <% } %>
+                                                        <% }); %>
+                                        </ul>
+                                    </div>
                                     <% }); %>
-        </div>
-    </section>
+                            </div>
+                            <% }); %>
+                                <% } else { %>
+                                    <h2 class="year-title" id="year<%= year._id %>">
+                                        <%= year.name %>
+                                    </h2>
+                                    <hr>
 
-    </body>
+                                    <div class="row">
+                                        <% year.semester.forEach(semester=> { %>
+                                            <div class="col-lg-6 semester-col">
+                                                <h3 class="Semester-title">
+                                                    <%= semester %>
+                                                </h3>
+                                                <hr>
+                                                <ul class="list-group list-group-flush modules">
+                                                    <% year.subjects.forEach(subject=> { %>
+                                                        <% if (subject.semester===semester) { %>
+                                                            <li class="list-group-item">
+                                                                <div class="dropdown">
+                                                                    <button class="btn w-100 module-btn" type="button"
+                                                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                                                        <%= subject.name %>
+                                                                    </button>
+                                                                    <ul class="dropdown-menu w-100 module-dropdown">
+                                                                        <% subject.types.forEach(type=> { %>
+                                                                            <li>
+                                                                                <a class="dropdown-item"
+                                                                                    href="/major/<%= majorId%>/documents/<%= type.name %>/<%= subject._id %>">
+                                                                                    <%= type.name %>
+                                                                                </a>
+                                                                            </li>
+                                                                            <% }); %>
+                                                                    </ul>
+                                                                </div>
+                                                            </li>
+                                                            <% } %>
+                                                                <% }); %>
+                                                </ul>
+                                            </div>
+                                            <% }); %>
+                                    </div>
+                                    <% } %>
+                                        <% }); %>
+            </div>
+        </section>
 
-    </html>
+        </body>
+
+        </html>

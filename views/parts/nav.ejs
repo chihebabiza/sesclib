@@ -22,7 +22,11 @@
                 <a class="<%= page === 'contact' ? 'nav-link active' : 'nav-link' %>" href="/contact">Contact Us</a>
             </li>
         </ul>
-        <button type="button" class="btn btn-outline-dark  ml-auto nav-btns log-btn">Log in</button>
-        <button type="button" class="btn btn-primary ml-auto nav-btns sign-btn">sign up</button>
+        <% if (session.user) { %>
+            <a href="/logout" class="btn btn-outline-danger ml-auto nav-btns log-out-btn">Log out</a>
+            <% } else { %>
+                <a href="/login" class="btn btn-outline-dark ml-auto nav-btns log-btn">Log in</a>
+                <a href="/register" class="btn btn-primary ml-auto nav-btns sign-btn">Sign up</a>
+                <% } %>
     </div>
 </nav>

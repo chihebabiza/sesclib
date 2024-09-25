@@ -8,6 +8,7 @@ const userControllers = require('../controllers/user.controller');
 const uploadImage = require('../config/image');
 const uploadDocument = require('../config/document');
 const { isAdmin } = require('../config/auth');
+const { getHome } = require('../controllers/home.controllers');
 
 // Majors requrest
 router.get('/dashboard', isAdmin, adminControllers.getDashboard);

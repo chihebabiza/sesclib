@@ -33,7 +33,7 @@ exports.register = async (req, res) => {
     } catch (error) {
         console.error('Error registering user:', error);
         req.flash('error', 'Error registering user');
-        res.status(500).redirect('/register');
+        res.render('user/error', { message: 'An unexpected error occurred. Please try again later.' });
     } finally {
         await disconnectDB();
     }
@@ -70,7 +70,7 @@ exports.login = async (req, res) => {
     } catch (error) {
         console.error('Error logging in:', error);
         req.flash('error', 'An error occurred. Please try again.');
-        res.redirect('/login');
+        res.render('user/error', { message: 'An unexpected error occurred. Please try again later.' });
     } finally {
         await disconnectDB();
     }
@@ -80,9 +80,8 @@ exports.logout = (req, res) => {
     req.session.destroy(err => {
         if (err) {
             console.error('Error destroying session:', err);
-            return res.status(500).send('Could not log out. Please try again.');
+            res.render('user/error', { message: 'An unexpected error occurred. Please try again later.' });
         }
-
         res.redirect('/');
     });
 };

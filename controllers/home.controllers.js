@@ -6,25 +6,27 @@ const Type = require('../models/type.model');
 const Document = require('../models/document.model');
 const { connectDB, disconnectDB } = require('../config/db');
 
+exports.getResourses = async (req, res) => {
+    try {
+        await connectDB();
+        const majors = await Major.find({});
+        res.render('user/resources', { majors, page: 'resources', session: req.session });
+    } catch (error) {
+        console.error('Error fetching resources:', error);
+        res.render('user/error', { message: 'An unexpected error occurred. Please try again later.' });
+    } finally {
+        await disconnectDB();
+    }
+};
+
 exports.getHome = async (req, res) => {
     try {
         await connectDB();
         const majors = await Major.find({});
         res.render('user/index', { majors, page: 'home', session: req.session });
     } catch (error) {
-        res.status(500).send('Error fetching home page: ' + error.message);
-    } finally {
-        await disconnectDB();
-    }
-};
-
-exports.getResourses = async (req, res) => {
-    try {
-        await connectDB();
-        const majors = await Major.find({});
-        res.render('user/resourses', { majors, page: 'resources', session: req.session });
-    } catch (error) {
-        res.status(500).send('Error fetching home page: ' + error.message);
+        console.error('Error fetching home page:', error);
+        res.render('user/error', { message: 'An unexpected error occurred. Please try again later.' });
     } finally {
         await disconnectDB();
     }
@@ -35,7 +37,9 @@ exports.getMajor = async (req, res) => {
         await connectDB();
         const majorId = req.params.id;
         const major = await Major.findById(majorId);
-        if (!major) return res.status(404).send('Major not found');
+        if (!major) {
+            return res.status(404).render('user/error', { message: 'Major not found.' });
+        }
 
         const years = await Year.find();
 
@@ -67,7 +71,7 @@ exports.getMajor = async (req, res) => {
         res.render('user/major', { major, years, majorId, page: 'resources', session: req.session });
     } catch (error) {
         console.error('Error fetching subjects and documents:', error);
-        res.status(500).send('Server Error');
+        res.render('user/error', { message: 'An unexpected error occurred. Please try again later.' });
     } finally {
         await disconnectDB();
     }
@@ -94,7 +98,8 @@ exports.getRegister = async (req, res) => {
             error
         });
     } catch (err) {
-        res.status(500).send('Error fetching registration page: ' + err.message);
+        console.error('Error fetching registration page:', err);
+        res.render('user/error', { message: 'An unexpected error occurred. Please try again later.' });
     } finally {
         await disconnectDB();
     }
@@ -108,20 +113,20 @@ exports.getDocuments = async (req, res) => {
 
         const typeDocument = await Type.findOne({ name: type });
         if (!typeDocument) {
-            return res.status(404).send('Type not found');
+            return res.status(404).render('user/error', { message: 'Type not found.' });
         }
 
         const documents = await Document.find({ subject: subjectId, type: typeDocument._id });
 
         const subject = await Subject.findById(subjectId);
         if (!subject) {
-            return res.status(404).send('Subject not found');
+            return res.status(404).render('user/error', { message: 'Subject not found.' });
         }
 
         res.render('user/document', { documents, subject, type, majorId });
     } catch (err) {
         console.error('Error fetching documents:', err);
-        res.status(500).send('Server Error');
+        res.render('user/error', { message: 'An unexpected error occurred. Please try again later.' });
     } finally {
         await disconnectDB();
     }
@@ -129,16 +134,22 @@ exports.getDocuments = async (req, res) => {
 
 exports.getAbout = (req, res) => {
     try {
-        res.render('user/about', { page: 'about', session: req.session })
+        res.render('user/about', { page: 'about', session: req.session });
     } catch (err) {
-        res.status(500).send('Error fetching home page: ' + err.message);
+        console.error('Error fetching about page:', err);
+        res.render('user/error', { message: 'An unexpected error occurred. Please try again later.' });
     }
-}
+};
 
 exports.getContact = (req, res) => {
     try {
-        res.render('user/contact', { page: 'contact', session: req.session })
+        res.render('user/contact', { page: 'contact', session: req.session });
     } catch (err) {
-        res.status(500).send('Error fetching home page: ' + err.message);
+        console.error('Error fetching contact page:', err);
+        res.render('user/error', { message: 'An unexpected error occurred. Please try again later.' });
     }
-}
+};
+
+exports.get404 = (req, res) => {
+    res.status(404).render('user/404');
+};

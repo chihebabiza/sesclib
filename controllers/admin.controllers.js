@@ -27,7 +27,7 @@ exports.getDashboard = async (req, res) => {
         });
     } catch (error) {
         console.error('Error opening dashboard:', error);
-        res.status(500).send('Server Error');
+        res.render('user/error', { message: 'An unexpected error occurred. Please try again later.' });
     } finally {
         await disconnectDB();
     }
@@ -44,7 +44,7 @@ exports.getUsersDashboard = async (req, res) => {
         });
     } catch (error) {
         console.error('Error fetching users:', error);
-        res.status(500).send('Server Error');
+        res.render('user/error', { message: 'An unexpected error occurred. Please try again later.' });
     } finally {
         await disconnectDB();
     }
@@ -57,7 +57,7 @@ exports.getMajorsPage = async (req, res) => {
         res.render('admin/getMajor', { majors, page: 'majors' });
     } catch (error) {
         console.error('Error fetching majors:', error);
-        res.status(500).send('Server Error');
+        res.render('user/error', { message: 'An unexpected error occurred. Please try again later.' });
     } finally {
         await disconnectDB();
     }
@@ -71,7 +71,7 @@ exports.getUpdateMajorPage = async (req, res) => {
         res.render('admin/updateMajor', { major });
     } catch (err) {
         console.error('Error fetching major:', err);
-        res.status(500).send('Server Error');
+        res.render('user/error', { message: 'An unexpected error occurred. Please try again later.' });
     } finally {
         await disconnectDB();
     }
@@ -82,7 +82,7 @@ exports.getAddMajorPage = async (req, res) => {
         res.render('admin/addMajor');
     } catch (err) {
         console.error('Error fetching major:', err);
-        res.status(500).send('Server Error');
+        res.render('user/error', { message: 'An unexpected error occurred. Please try again later.' });
     }
 };
 
@@ -102,7 +102,7 @@ exports.getSubmajorsPage = async (req, res) => {
         res.render('admin/getSubmajor', { major, years });
     } catch (error) {
         console.error('Error fetching subjects:', error);
-        res.status(500).send('Server Error');
+        res.render('user/error', { message: 'An unexpected error occurred. Please try again later.' });
     } finally {
         await disconnectDB();
     }
@@ -121,7 +121,7 @@ exports.getUpdateSubmajorPage = async (req, res) => {
         res.render('admin/updateSubmajor', { submajor, majors, years: allYears, major: submajor.major });
     } catch (error) {
         console.error('Error fetching submajor:', error);
-        res.status(500).send('Server Error');
+        res.render('user/error', { message: 'An unexpected error occurred. Please try again later.' });
     } finally {
         await disconnectDB();
     }
@@ -141,7 +141,7 @@ exports.getAddSubmajorPage = async (req, res) => {
         res.render('admin/addSubmajor', { major, years });
     } catch (error) {
         console.error('Error fetching majors:', error);
-        res.status(500).send('Server Error');
+        res.render('user/error', { message: 'An unexpected error occurred. Please try again later.' });
     } finally {
         await disconnectDB();
     }
@@ -169,7 +169,7 @@ exports.getAddSubjectPage = async (req, res) => {
         });
     } catch (error) {
         console.error('Error fetching major:', error);
-        res.redirect('/dashboard/subjects?error=FetchError');
+        res.render('user/error', { message: 'An unexpected error occurred. Please try again later.' });
     } finally {
         await disconnectDB();
     }
@@ -199,7 +199,7 @@ exports.getUpdateSubjectPage = async (req, res) => {
         res.render('admin/updateSubject', { subject, major, year, types });
     } catch (error) {
         console.error('Error fetching subject for update:', error);
-        res.redirect(`/dashboard/major/${req.params.majorId}/year/${req.params.yearId}/subjects?error=FetchSubjectError`);
+        res.render('user/error', { message: 'An unexpected error occurred. Please try again later.' });
     } finally {
         await disconnectDB();
     }
@@ -241,7 +241,7 @@ exports.getSubjects = async (req, res) => {
         });
     } catch (error) {
         console.error('Error fetching subjects by major, year, and submajor:', error);
-        res.status(500).send('Server Error');
+        res.render('user/error', { message: 'An unexpected error occurred. Please try again later.' });
     } finally {
         await disconnectDB();
     }
@@ -267,7 +267,7 @@ exports.getDocuments = async (req, res) => {
         res.render('admin/getDocument', { documents, subject });
     } catch (error) {
         console.error('Error fetching documents:', error);
-        res.redirect(`/dashboard/subject/${req.params.subjectId}/documents?error=FetchDocumentsError`);
+        res.render('user/error', { message: 'An unexpected error occurred. Please try again later.' });
     } finally {
         await disconnectDB();
     }
@@ -291,7 +291,7 @@ exports.getAddDocumentPage = async (req, res) => {
         });
     } catch (error) {
         console.error('Error fetching subject or types:', error);
-        res.redirect(`/dashboard/subject/${req.params.subjectId}/documents?error=FetchError`);
+        res.render('user/error', { message: 'An unexpected error occurred. Please try again later.' });
     } finally {
         await disconnectDB();
     }
@@ -322,7 +322,7 @@ exports.getUpdateDocumentPage = async (req, res) => {
         });
     } catch (error) {
         console.error('Error fetching subject or document:', error);
-        res.redirect(`/dashboard/subject/${req.params.subjectId}/documents?error=FetchError`);
+        res.render('user/error', { message: 'An unexpected error occurred. Please try again later.' });
     } finally {
         await disconnectDB();
     }

@@ -28,7 +28,7 @@ exports.updateMajor = async (req, res) => {
         res.redirect('/dashboard/majors');
     } catch (error) {
         console.error('Error updating major:', error);
-        res.redirect('/dashboard/majors');
+        res.render('user/error', { message: 'An unexpected error occurred. Please try again later.' });
     } finally {
         await disconnectDB();
     }
@@ -38,13 +38,13 @@ exports.addMajor = async (req, res) => {
     try {
         await connectDB();
         const { name } = req.body;
-        const image = req.file ? `/uploads/images/${req.file.filename}` : ''; 
+        const image = req.file ? `/uploads/images/${req.file.filename}` : '';
         const newMajor = new Major({ name, image });
         await newMajor.save();
         res.redirect('/dashboard/majors');
     } catch (error) {
         console.error('Error adding major:', error);
-        res.redirect('/dashboard/majors');
+        res.render('user/error', { message: 'An unexpected error occurred. Please try again later.' });
     } finally {
         await disconnectDB();
     }
@@ -61,7 +61,7 @@ exports.addSubmajor = async (req, res) => {
         res.redirect(`/dashboard/major/${majorId}/years`);
     } catch (error) {
         console.error('Error adding submajor:', error);
-        res.status(500).send('Server Error');
+        res.render('user/error', { message: 'An unexpected error occurred. Please try again later.' });
     } finally {
         await disconnectDB();
     }
@@ -77,7 +77,7 @@ exports.updateSubmajor = async (req, res) => {
         res.redirect(`/dashboard/major/${major}/years`);
     } catch (error) {
         console.error('Error updating submajor:', error);
-        res.status(500).send('Server Error');
+        res.render('user/error', { message: 'An unexpected error occurred. Please try again later.' });
     } finally {
         await disconnectDB();
     }
@@ -102,7 +102,7 @@ exports.deleteSubmajor = async (req, res) => {
         res.redirect(`/dashboard/major/${major}/years`);
     } catch (error) {
         console.error('Error deleting submajor:', error);
-        res.status(500).send('Server Error');
+        res.render('user/error', { message: 'An unexpected error occurred. Please try again later.' });
     } finally {
         await disconnectDB();
     }

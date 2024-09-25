@@ -29,7 +29,7 @@ exports.addDocuments = async (req, res) => {
         res.redirect(`/dashboard/subject/${subjectId}/documents?success=DocumentsAdded`);
     } catch (error) {
         console.error('Error adding documents:', error);
-        res.status(500).send('Error adding documents');
+        res.render('user/error', { message: 'An unexpected error occurred. Please try again later.' });
     } finally {
         await disconnectDB();
     }
@@ -51,7 +51,7 @@ exports.updateDocument = async (req, res) => {
         res.redirect(`/dashboard/subject/${subjectId}/documents?success=DocumentUpdated`);
     } catch (error) {
         console.error('Error updating document:', error);
-        res.status(500).send('Server Error');
+        res.render('user/error', { message: 'An unexpected error occurred. Please try again later.' });
     } finally {
         await disconnectDB();
     }
@@ -67,7 +67,7 @@ exports.deleteDocument = async (req, res) => {
         res.redirect(`/dashboard/subject/${req.params.subjectId}/documents?success=DocumentDeleted`);
     } catch (error) {
         console.error('Error deleting document:', error);
-        res.status(500).send('Error deleting document');
+        res.render('user/error', { message: 'An unexpected error occurred. Please try again later.' });
     } finally {
         await disconnectDB();
     }

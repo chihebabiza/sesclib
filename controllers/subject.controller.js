@@ -26,7 +26,7 @@ exports.addSubject = async (req, res) => {
         res.redirect(`/dashboard/major/${majorId}/year/${yearId}/subjects?success=SubjectAdded`);
     } catch (error) {
         console.error('Error adding subject:', error);
-        res.redirect(`/dashboard/major/${req.params.majorId}/year/${req.params.yearId}/subject/add?error=AddSubjectError`);
+        res.render('user/error', { message: 'An unexpected error occurred. Please try again later.' });
     } finally {
         await disconnectDB();
     }
@@ -50,7 +50,7 @@ exports.updateSubject = async (req, res) => {
             majorId,
             yearId,
             submajorId
-        }, { new: true }); 
+        }, { new: true });
 
         if (!updatedSubject) {
             return res.status(404).send('Subject not found');
@@ -59,7 +59,7 @@ exports.updateSubject = async (req, res) => {
         res.redirect(`/dashboard/major/${majorId}/year/${yearId}/subjects?success=SubjectUpdated`);
     } catch (error) {
         console.error('Error updating subject:', error);
-        res.redirect(`/dashboard/major/${majorId}/year/${yearId}/subject/edit/${req.params.subjectId}?error=UpdateSubjectError`);
+        res.render('user/error', { message: 'An unexpected error occurred. Please try again later.' });
     } finally {
         await disconnectDB();
     }
@@ -80,7 +80,7 @@ exports.deleteSubject = async (req, res) => {
         res.redirect(`/dashboard/major/${majorId}/year/${yearId}/subjects?success=SubjectDeleted`);
     } catch (error) {
         console.error('Error deleting subject:', error);
-        res.redirect(`/dashboard/major/${req.params.majorId}/year/${req.params.yearId}/subject?error=DeleteSubjectError`);
+        res.render('user/error', { message: 'An unexpected error occurred. Please try again later.' });
     } finally {
         await disconnectDB();
     }

@@ -186,31 +186,46 @@ p {
     color: #3795bd82;
 }
 
-/* Club section */
-.club-title {
+/* About us section */
+#club.white-section {
+    background-color: #ffffff;
+}
+
+.about-title {
     font-size: 2.5rem;
     color: #3B5998;
     line-height: 1.5;
+    margin: 3% 0;
 }
 
-.club-subtitle {
-    font-weight: 700;
-    font-size: 1.8rem;
+.about-subtitle {
     color: #8A2BE2;
     line-height: 1.5;
 }
 
-.club-content {
-    background-color: #ffffff;
-    padding: 4%;
-    border-radius: 15px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
+.about-content {
     text-align: left;
 }
 
-.club-content:hover {
-    transform: scale(1.02);
+.about-img {
+    width: 75%;
+    margin-left: 10%;
+    margin-top: 5%;
+}
+
+.about-text {
+    margin: 4% 0;
+}
+
+.about-btn {
+    border-color: #8A2BE2;
+    color: #8A2BE2;
+}
+
+.about-btn:hover {
+    background-color: #8A2BE2;
+    color: #ffffff;
+    border-color: #8A2BE2;
 }
 
 /* contact section */
@@ -409,4 +424,20 @@ hr {
 .colored-section a.form-link {
     color: #8A2BE2;
     text-decoration: none;
+}
+
+/* dashboard */
+.search-bar {
+    padding: 0;
+    margin: 0;
+    width: 40%;
+}
+
+.search-input {
+    margin: 0;
+}
+
+.search-btn {
+    border-radius: 50%;
+    border: none;
 }

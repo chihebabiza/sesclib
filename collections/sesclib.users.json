@@ -1,0 +1,26 @@
+[{
+  "_id": {
+    "$oid": "66f4172652f51d2b470a8d4f"
+  },
+  "name": "chiheb abiza",
+  "email": "admin@gmail.com",
+  "password": "$2b$10$KRlSS4WetQPvYpx7n6xHYuBlOrsYzMCi68KXS8i.xXksPDgKa4W3S",
+  "specialty": {
+    "$oid": "66ec6e08aa82da4e8940fddc"
+  },
+  "type": "admin",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f42d87264ea35f147cdafb"
+  },
+  "name": "chiheb abiza",
+  "email": "chiheb@gmail.com",
+  "password": "$2b$10$Fe7oahtc4fEWExjOau7Rj.5T./2dmku3hsqPDv6Ofk58sOmknARkS",
+  "specialty": {
+    "$oid": "66ec6e08aa82da4e8940fddc"
+  },
+  "type": "user",
+  "__v": 0
+}]

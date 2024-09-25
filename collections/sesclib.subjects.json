@@ -1,0 +1,1826 @@
+[{
+  "_id": {
+    "$oid": "66f1d9f357414f40bdeb393a"
+  },
+  "name": "Analyse 2",
+  "major": {
+    "$oid": "66ec6e08aa82da4e8940fddb"
+  },
+  "semester": "Semester 2",
+  "year": {
+    "$oid": "66f10888e2bb0898e5517ec3"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f1de2618812c94a41b967b"
+  },
+  "name": "Analyse 1",
+  "major": {
+    "$oid": "66ec6e08aa82da4e8940fddb"
+  },
+  "semester": "Semester 1",
+  "year": {
+    "$oid": "66f10888e2bb0898e5517ec3"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f24c83a25d9726370268f9"
+  },
+  "name": "Algèbre 1",
+  "major": {
+    "$oid": "66ec6e08aa82da4e8940fddb"
+  },
+  "semester": "Semester 1",
+  "year": {
+    "$oid": "66f10888e2bb0898e5517ec3"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f24cbca25d9726370268fa"
+  },
+  "name": "Algorithmes et Structure de Données 1",
+  "major": {
+    "$oid": "66ec6e08aa82da4e8940fddb"
+  },
+  "semester": "Semester 1",
+  "year": {
+    "$oid": "66f10888e2bb0898e5517ec3"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ed"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f24cdaa25d9726370268fb"
+  },
+  "name": "Structure Machine 1",
+  "major": {
+    "$oid": "66ec6e08aa82da4e8940fddb"
+  },
+  "semester": "Semester 1",
+  "year": {
+    "$oid": "66f10888e2bb0898e5517ec3"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f24d1aa25d9726370268fc"
+  },
+  "name": "Physique 1",
+  "major": {
+    "$oid": "66ec6e08aa82da4e8940fddb"
+  },
+  "semester": "Semester 1",
+  "year": {
+    "$oid": "66f10888e2bb0898e5517ec3"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f24d3ba25d9726370268fd"
+  },
+  "name": "Algèbre 2",
+  "major": {
+    "$oid": "66ec6e08aa82da4e8940fddb"
+  },
+  "semester": "Semester 2",
+  "year": {
+    "$oid": "66f10888e2bb0898e5517ec3"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f24d49a25d9726370268fe"
+  },
+  "name": "Algorithmes et Structure de Données 2",
+  "major": {
+    "$oid": "66ec6e08aa82da4e8940fddb"
+  },
+  "semester": "Semester 2",
+  "year": {
+    "$oid": "66f10888e2bb0898e5517ec3"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ed"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f24d58a25d9726370268ff"
+  },
+  "name": "Structure Machine 2",
+  "major": {
+    "$oid": "66ec6e08aa82da4e8940fddb"
+  },
+  "semester": "Semester 2",
+  "year": {
+    "$oid": "66f10888e2bb0898e5517ec3"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f24d64a25d972637026900"
+  },
+  "name": "Physique 2",
+  "major": {
+    "$oid": "66ec6e08aa82da4e8940fddb"
+  },
+  "semester": "Semester 2",
+  "year": {
+    "$oid": "66f10888e2bb0898e5517ec3"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f251a5789ff3ccef2df4c0"
+  },
+  "name": "Analyse 1",
+  "major": {
+    "$oid": "66ec8cbaed727714ae4697c4"
+  },
+  "semester": "Semester 1",
+  "year": {
+    "$oid": "66f10888e2bb0898e5517ec3"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ed"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f251a5789ff3ccef2df4c1"
+  },
+  "name": "Algèbre 1",
+  "major": {
+    "$oid": "66ec8cbaed727714ae4697c4"
+  },
+  "semester": "Semester 1",
+  "year": {
+    "$oid": "66f10888e2bb0898e5517ec3"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ed"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f251a5789ff3ccef2df4c2"
+  },
+  "name": "Algorithmes et Structure de Données 1",
+  "major": {
+    "$oid": "66ec8cbaed727714ae4697c4"
+  },
+  "semester": "Semester 1",
+  "year": {
+    "$oid": "66f10888e2bb0898e5517ec3"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ed"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f251a5789ff3ccef2df4c3"
+  },
+  "name": "Structure Machine 1",
+  "major": {
+    "$oid": "66ec8cbaed727714ae4697c4"
+  },
+  "semester": "Semester 1",
+  "year": {
+    "$oid": "66f10888e2bb0898e5517ec3"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ed"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f251a5789ff3ccef2df4c4"
+  },
+  "name": "Physique 1",
+  "major": {
+    "$oid": "66ec8cbaed727714ae4697c4"
+  },
+  "semester": "Semester 1",
+  "year": {
+    "$oid": "66f10888e2bb0898e5517ec3"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ed"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f251a5789ff3ccef2df4c5"
+  },
+  "name": "Analyse 2",
+  "major": {
+    "$oid": "66ec8cbaed727714ae4697c4"
+  },
+  "semester": "Semester 2",
+  "year": {
+    "$oid": "66f10888e2bb0898e5517ec3"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ed"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f251a5789ff3ccef2df4c6"
+  },
+  "name": "Algèbre 2",
+  "major": {
+    "$oid": "66ec8cbaed727714ae4697c4"
+  },
+  "semester": "Semester 2",
+  "year": {
+    "$oid": "66f10888e2bb0898e5517ec3"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ed"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f251a5789ff3ccef2df4c7"
+  },
+  "name": "Algorithmes et Structure de Données 2",
+  "major": {
+    "$oid": "66ec8cbaed727714ae4697c4"
+  },
+  "semester": "Semester 2",
+  "year": {
+    "$oid": "66f10888e2bb0898e5517ec3"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ed"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f251a5789ff3ccef2df4c8"
+  },
+  "name": "Structure Machine 2",
+  "major": {
+    "$oid": "66ec8cbaed727714ae4697c4"
+  },
+  "semester": "Semester 2",
+  "year": {
+    "$oid": "66f10888e2bb0898e5517ec3"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ed"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f251a5789ff3ccef2df4c9"
+  },
+  "name": "Physique 2",
+  "major": {
+    "$oid": "66ec8cbaed727714ae4697c4"
+  },
+  "semester": "Semester 2",
+  "year": {
+    "$oid": "66f10888e2bb0898e5517ec3"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ed"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f29791ee8418e517bc7cc1"
+  },
+  "name": "Algorithmes et Structure de Données 1",
+  "major": {
+    "$oid": "66ec6e08aa82da4e8940fddc"
+  },
+  "semester": "Semester 1",
+  "year": {
+    "$oid": "66f10888e2bb0898e5517ec3"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ed"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f29791ee8418e517bc7cc2"
+  },
+  "name": "Analyse 1",
+  "major": {
+    "$oid": "66ec6e08aa82da4e8940fddc"
+  },
+  "semester": "Semester 1",
+  "year": {
+    "$oid": "66f10888e2bb0898e5517ec3"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ed"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f29791ee8418e517bc7cc3"
+  },
+  "name": "Architecture des Ordinateurs 1",
+  "major": {
+    "$oid": "66ec6e08aa82da4e8940fddc"
+  },
+  "semester": "Semester 1",
+  "year": {
+    "$oid": "66f10888e2bb0898e5517ec3"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ed"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f29791ee8418e517bc7cc4"
+  },
+  "name": "Introduction aux systèmes d'exploitation 1",
+  "major": {
+    "$oid": "66ec6e08aa82da4e8940fddc"
+  },
+  "semester": "Semester 1",
+  "year": {
+    "$oid": "66f10888e2bb0898e5517ec3"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ed"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f29791ee8418e517bc7cc5"
+  },
+  "name": "Algèbre 1",
+  "major": {
+    "$oid": "66ec6e08aa82da4e8940fddc"
+  },
+  "semester": "Semester 1",
+  "year": {
+    "$oid": "66f10888e2bb0898e5517ec3"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ed"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f29791ee8418e517bc7cc6"
+  },
+  "name": "Bureautique et WEB",
+  "major": {
+    "$oid": "66ec6e08aa82da4e8940fddc"
+  },
+  "semester": "Semester 1",
+  "year": {
+    "$oid": "66f10888e2bb0898e5517ec3"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ed"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f29791ee8418e517bc7cc7"
+  },
+  "name": "Algorithmes et Structure de Données 2",
+  "major": {
+    "$oid": "66ec6e08aa82da4e8940fddc"
+  },
+  "semester": "Semester 2",
+  "year": {
+    "$oid": "66f10888e2bb0898e5517ec3"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ed"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f29791ee8418e517bc7cc8"
+  },
+  "name": "Introduction aux systèmes d'exploitation 2",
+  "major": {
+    "$oid": "66ec6e08aa82da4e8940fddc"
+  },
+  "semester": "Semester 2",
+  "year": {
+    "$oid": "66f10888e2bb0898e5517ec3"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ed"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f29791ee8418e517bc7cc9"
+  },
+  "name": "Analyse 2",
+  "major": {
+    "$oid": "66ec6e08aa82da4e8940fddc"
+  },
+  "semester": "Semester 2",
+  "year": {
+    "$oid": "66f10888e2bb0898e5517ec3"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ed"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f29791ee8418e517bc7cca"
+  },
+  "name": "Logique Mathématique",
+  "major": {
+    "$oid": "66ec6e08aa82da4e8940fddc"
+  },
+  "semester": "Semester 2",
+  "year": {
+    "$oid": "66f10888e2bb0898e5517ec3"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ed"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f29791ee8418e517bc7ccb"
+  },
+  "name": "Algèbre 2",
+  "major": {
+    "$oid": "66ec6e08aa82da4e8940fddc"
+  },
+  "semester": "Semester 2",
+  "year": {
+    "$oid": "66f10888e2bb0898e5517ec3"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ed"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f29791ee8418e517bc7ccc"
+  },
+  "name": "Probabilités et statistiques 1",
+  "major": {
+    "$oid": "66ec6e08aa82da4e8940fddc"
+  },
+  "semester": "Semester 2",
+  "year": {
+    "$oid": "66f10888e2bb0898e5517ec3"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ed"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f2989463d998c10f123103"
+  },
+  "name": "Structure de Fichiers et Structures de Données",
+  "major": {
+    "$oid": "66ec6e08aa82da4e8940fddc"
+  },
+  "semester": "Semester 1",
+  "year": {
+    "$oid": "66f108a3810b2eca90cc9dec"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ed"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f2989463d998c10f123104"
+  },
+  "name": "Architecture des Ordinateurs 2",
+  "major": {
+    "$oid": "66ec6e08aa82da4e8940fddc"
+  },
+  "semester": "Semester 1",
+  "year": {
+    "$oid": "66f108a3810b2eca90cc9dec"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ed"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f2989463d998c10f123105"
+  },
+  "name": "Programmation Orientée Objet 1",
+  "major": {
+    "$oid": "66ec6e08aa82da4e8940fddc"
+  },
+  "semester": "Semester 1",
+  "year": {
+    "$oid": "66f108a3810b2eca90cc9dec"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ed"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f2989463d998c10f123106"
+  },
+  "name": "Algorithmique et complexité",
+  "major": {
+    "$oid": "66ec6e08aa82da4e8940fddc"
+  },
+  "semester": "Semester 1",
+  "year": {
+    "$oid": "66f108a3810b2eca90cc9dec"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ed"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f2989463d998c10f123107"
+  },
+  "name": "Algèbre 3",
+  "major": {
+    "$oid": "66ec6e08aa82da4e8940fddc"
+  },
+  "semester": "Semester 1",
+  "year": {
+    "$oid": "66f108a3810b2eca90cc9dec"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ed"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f2989463d998c10f123108"
+  },
+  "name": "Analyse 3",
+  "major": {
+    "$oid": "66ec6e08aa82da4e8940fddc"
+  },
+  "semester": "Semester 1",
+  "year": {
+    "$oid": "66f108a3810b2eca90cc9dec"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ed"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f2989463d998c10f123109"
+  },
+  "name": "Probabilités et Statistiques 2",
+  "major": {
+    "$oid": "66ec6e08aa82da4e8940fddc"
+  },
+  "semester": "Semester 1",
+  "year": {
+    "$oid": "66f108a3810b2eca90cc9dec"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ed"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f2989463d998c10f12310a"
+  },
+  "name": "Programmation Orientée Objet 2",
+  "major": {
+    "$oid": "66ec6e08aa82da4e8940fddc"
+  },
+  "semester": "Semester 2",
+  "year": {
+    "$oid": "66f108a3810b2eca90cc9dec"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ed"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f2989463d998c10f12310b"
+  },
+  "name": "Introduction aux Systèmes d'Information",
+  "major": {
+    "$oid": "66ec6e08aa82da4e8940fddc"
+  },
+  "semester": "Semester 2",
+  "year": {
+    "$oid": "66f108a3810b2eca90cc9dec"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ed"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f2989463d998c10f12310c"
+  },
+  "name": "Introduction aux Réseaux Informatiques",
+  "major": {
+    "$oid": "66ec6e08aa82da4e8940fddc"
+  },
+  "semester": "Semester 2",
+  "year": {
+    "$oid": "66f108a3810b2eca90cc9dec"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ed"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f2989463d998c10f12310d"
+  },
+  "name": "Introduction aux Bases de Données",
+  "major": {
+    "$oid": "66ec6e08aa82da4e8940fddc"
+  },
+  "semester": "Semester 2",
+  "year": {
+    "$oid": "66f108a3810b2eca90cc9dec"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ed"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f2989463d998c10f12310e"
+  },
+  "name": "Théorie des Langages",
+  "major": {
+    "$oid": "66ec6e08aa82da4e8940fddc"
+  },
+  "semester": "Semester 2",
+  "year": {
+    "$oid": "66f108a3810b2eca90cc9dec"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ed"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f2989463d998c10f12310f"
+  },
+  "name": "Théorie des Graphes",
+  "major": {
+    "$oid": "66ec6e08aa82da4e8940fddc"
+  },
+  "semester": "Semester 2",
+  "year": {
+    "$oid": "66f108a3810b2eca90cc9dec"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ed"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f2989463d998c10f123110"
+  },
+  "name": "Projet Pluridisciplinaire",
+  "major": {
+    "$oid": "66ec6e08aa82da4e8940fddc"
+  },
+  "semester": "Semester 2",
+  "year": {
+    "$oid": "66f108a3810b2eca90cc9dec"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ed"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f29b9093a697dac9077e5b"
+  },
+  "name": "Architecture des ordinateurs",
+  "major": {
+    "$oid": "66ec6e08aa82da4e8940fddb"
+  },
+  "semester": "Semester 1",
+  "year": {
+    "$oid": "66f108a3810b2eca90cc9dec"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ed"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f29b9093a697dac9077e5c"
+  },
+  "name": "Algorithmique et structure de données 3",
+  "major": {
+    "$oid": "66ec6e08aa82da4e8940fddb"
+  },
+  "semester": "Semester 1",
+  "year": {
+    "$oid": "66f108a3810b2eca90cc9dec"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ed"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f29b9093a697dac9077e5d"
+  },
+  "name": "Systèmes d'information",
+  "major": {
+    "$oid": "66ec6e08aa82da4e8940fddb"
+  },
+  "semester": "Semester 1",
+  "year": {
+    "$oid": "66f108a3810b2eca90cc9dec"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ed"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f29b9093a697dac9077e5e"
+  },
+  "name": "Théorie des graphes",
+  "major": {
+    "$oid": "66ec6e08aa82da4e8940fddb"
+  },
+  "semester": "Semester 1",
+  "year": {
+    "$oid": "66f108a3810b2eca90cc9dec"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ed"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f29b9093a697dac9077e5f"
+  },
+  "name": "Méthodes numériques",
+  "major": {
+    "$oid": "66ec6e08aa82da4e8940fddb"
+  },
+  "semester": "Semester 1",
+  "year": {
+    "$oid": "66f108a3810b2eca90cc9dec"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ed"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f29b9093a697dac9077e60"
+  },
+  "name": "Logique mathématique",
+  "major": {
+    "$oid": "66ec6e08aa82da4e8940fddb"
+  },
+  "semester": "Semester 1",
+  "year": {
+    "$oid": "66f108a3810b2eca90cc9dec"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ed"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f29b9093a697dac9077e61"
+  },
+  "name": "Langue étrangère 2",
+  "major": {
+    "$oid": "66ec6e08aa82da4e8940fddb"
+  },
+  "semester": "Semester 1",
+  "year": {
+    "$oid": "66f108a3810b2eca90cc9dec"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ed"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f29b9093a697dac9077e62"
+  },
+  "name": "Théories des langages",
+  "major": {
+    "$oid": "66ec6e08aa82da4e8940fddb"
+  },
+  "semester": "Semester 2",
+  "year": {
+    "$oid": "66f108a3810b2eca90cc9dec"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ed"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f29b9093a697dac9077e63"
+  },
+  "name": "Système d'exploitation 1",
+  "major": {
+    "$oid": "66ec6e08aa82da4e8940fddb"
+  },
+  "semester": "Semester 2",
+  "year": {
+    "$oid": "66f108a3810b2eca90cc9dec"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ed"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f29b9093a697dac9077e64"
+  },
+  "name": "Base de données",
+  "major": {
+    "$oid": "66ec6e08aa82da4e8940fddb"
+  },
+  "semester": "Semester 2",
+  "year": {
+    "$oid": "66f108a3810b2eca90cc9dec"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ed"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f29b9093a697dac9077e65"
+  },
+  "name": "Réseaux",
+  "major": {
+    "$oid": "66ec6e08aa82da4e8940fddb"
+  },
+  "semester": "Semester 2",
+  "year": {
+    "$oid": "66f108a3810b2eca90cc9dec"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ed"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f29b9093a697dac9077e66"
+  },
+  "name": "Programmation orienté objet",
+  "major": {
+    "$oid": "66ec6e08aa82da4e8940fddb"
+  },
+  "semester": "Semester 2",
+  "year": {
+    "$oid": "66f108a3810b2eca90cc9dec"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ed"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f29b9093a697dac9077e67"
+  },
+  "name": "Développement d'applications web",
+  "major": {
+    "$oid": "66ec6e08aa82da4e8940fddb"
+  },
+  "semester": "Semester 2",
+  "year": {
+    "$oid": "66f108a3810b2eca90cc9dec"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ed"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f29b9093a697dac9077e68"
+  },
+  "name": "Langue étrangère 3",
+  "major": {
+    "$oid": "66ec6e08aa82da4e8940fddb"
+  },
+  "semester": "Semester 2",
+  "year": {
+    "$oid": "66f108a3810b2eca90cc9dec"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ed"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f29b9093a697dac9077e69"
+  },
+  "name": "Système d'exploitation 2",
+  "major": {
+    "$oid": "66ec6e08aa82da4e8940fddb"
+  },
+  "semester": "Semester 1",
+  "year": {
+    "$oid": "66f108b8810b2eca90cc9ded"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ed"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f29b9093a697dac9077e6a"
+  },
+  "name": "Compilation",
+  "major": {
+    "$oid": "66ec6e08aa82da4e8940fddb"
+  },
+  "semester": "Semester 1",
+  "year": {
+    "$oid": "66f108b8810b2eca90cc9ded"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ed"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f29b9093a697dac9077e6b"
+  },
+  "name": "Génie logiciel",
+  "major": {
+    "$oid": "66ec6e08aa82da4e8940fddb"
+  },
+  "semester": "Semester 1",
+  "year": {
+    "$oid": "66f108b8810b2eca90cc9ded"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ed"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f29b9093a697dac9077e6c"
+  },
+  "name": "Interface homme machine",
+  "major": {
+    "$oid": "66ec6e08aa82da4e8940fddb"
+  },
+  "semester": "Semester 1",
+  "year": {
+    "$oid": "66f108b8810b2eca90cc9ded"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ed"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f29b9093a697dac9077e6d"
+  },
+  "name": "Programmation linéaire",
+  "major": {
+    "$oid": "66ec6e08aa82da4e8940fddb"
+  },
+  "semester": "Semester 1",
+  "year": {
+    "$oid": "66f108b8810b2eca90cc9ded"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ed"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f29b9093a697dac9077e6e"
+  },
+  "name": "Probabilités et statistique",
+  "major": {
+    "$oid": "66ec6e08aa82da4e8940fddb"
+  },
+  "semester": "Semester 1",
+  "year": {
+    "$oid": "66f108b8810b2eca90cc9ded"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ed"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f29b9093a697dac9077e6f"
+  },
+  "name": "Economie numérique et veille stratégique",
+  "major": {
+    "$oid": "66ec6e08aa82da4e8940fddb"
+  },
+  "semester": "Semester 1",
+  "year": {
+    "$oid": "66f108b8810b2eca90cc9ded"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ed"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f29b9093a697dac9077e70"
+  },
+  "name": "Ingénierie des données",
+  "major": {
+    "$oid": "66ec6e08aa82da4e8940fddb"
+  },
+  "semester": "Semester 2",
+  "year": {
+    "$oid": "66f108b8810b2eca90cc9ded"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ed"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f29b9093a697dac9077e71"
+  },
+  "name": "Intelligence artificielle",
+  "major": {
+    "$oid": "66ec6e08aa82da4e8940fddb"
+  },
+  "semester": "Semester 2",
+  "year": {
+    "$oid": "66f108b8810b2eca90cc9ded"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ed"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f29b9093a697dac9077e72"
+  },
+  "name": "Sécurité informatique",
+  "major": {
+    "$oid": "66ec6e08aa82da4e8940fddb"
+  },
+  "semester": "Semester 2",
+  "year": {
+    "$oid": "66f108b8810b2eca90cc9ded"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ed"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f29b9093a697dac9077e73"
+  },
+  "name": "Référentiels et normes",
+  "major": {
+    "$oid": "66ec6e08aa82da4e8940fddb"
+  },
+  "semester": "Semester 2",
+  "year": {
+    "$oid": "66f108b8810b2eca90cc9ded"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ed"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f29b9093a697dac9077e74"
+  },
+  "name": "Gestion de projet",
+  "major": {
+    "$oid": "66ec6e08aa82da4e8940fddb"
+  },
+  "semester": "Semester 2",
+  "year": {
+    "$oid": "66f108b8810b2eca90cc9ded"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ed"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f29b9093a697dac9077e75"
+  },
+  "name": "Stage",
+  "major": {
+    "$oid": "66ec6e08aa82da4e8940fddb"
+  },
+  "semester": "Semester 2",
+  "year": {
+    "$oid": "66f108b8810b2eca90cc9ded"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ed"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f29b9093a697dac9077e76"
+  },
+  "name": "Langue étrangère 4",
+  "major": {
+    "$oid": "66ec6e08aa82da4e8940fddb"
+  },
+  "semester": "Semester 2",
+  "year": {
+    "$oid": "66f108b8810b2eca90cc9ded"
+  },
+  "types": [
+    {
+      "$oid": "66f1d7d0df76883edd27d3eb"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ec"
+    },
+    {
+      "$oid": "66f1d7d0df76883edd27d3ed"
+    }
+  ],
+  "__v": 0
+}]

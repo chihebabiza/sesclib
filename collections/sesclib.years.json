@@ -1,0 +1,55 @@
+[{
+  "_id": {
+    "$oid": "66f10888e2bb0898e5517ec3"
+  },
+  "name": "First Year",
+  "semester": [
+    "Semester 1",
+    "Semester 2"
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f108a3810b2eca90cc9dec"
+  },
+  "name": "Second Year",
+  "semester": [
+    "Semester 1",
+    "Semester 2"
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f108b8810b2eca90cc9ded"
+  },
+  "name": "Third Year",
+  "semester": [
+    "Semester 1",
+    "Semester 2"
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f108cc810b2eca90cc9dee"
+  },
+  "name": "Fourth Year",
+  "semester": [
+    "Semester 1",
+    "Semester 2"
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f108d0810b2eca90cc9def"
+  },
+  "name": "Fifth Year",
+  "semester": [
+    "Semester 1",
+    "Semester 2"
+  ],
+  "__v": 0
+}]

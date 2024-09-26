@@ -327,3 +327,7 @@ exports.getUpdateDocumentPage = async (req, res) => {
         await disconnectDB();
     }
 };
+
+exports.get404 = (req, res) => {
+    res.status(404).render('user/404');
+};

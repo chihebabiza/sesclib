@@ -60,7 +60,6 @@ exports.login = async (req, res) => {
         }
 
         req.session.user = user;
-        console.log(req.session)
 
         if (user.type === 'admin') {
             return res.redirect('/dashboard');

@@ -149,7 +149,3 @@ exports.getContact = (req, res) => {
         res.render('user/error', { message: 'An unexpected error occurred. Please try again later.' });
     }
 };
-
-exports.get404 = (req, res) => {
-    res.status(404).render('user/404');
-};

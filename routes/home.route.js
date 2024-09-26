@@ -15,6 +15,5 @@ router.post('/login', userControllers.login);
 router.get('/logout', isUser, userControllers.logout);
 router.get('/about', homeControllers.getAbout);
 router.get('/contact', homeControllers.getContact);
-router.get('*', homeControllers.get404);
 
 module.exports = router;

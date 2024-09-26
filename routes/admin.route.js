@@ -8,7 +8,6 @@ const userControllers = require('../controllers/user.controller');
 const uploadImage = require('../config/image');
 const uploadDocument = require('../config/document');
 const { isAdmin } = require('../config/auth');
-const { getHome } = require('../controllers/home.controllers');
 
 // Majors requrest
 router.get('/dashboard', isAdmin, adminControllers.getDashboard);
@@ -45,6 +44,7 @@ router.post('/dashboard/subject/:subjectId/document/delete/:id', isAdmin, docume
 
 router.get('/dashboard/logout', isAdmin, userControllers.logout);
 router.get('/dashboard/users', isAdmin, adminControllers.getUsersDashboard);
+router.get('*', adminControllers.get404);
 
 
 module.exports = router;

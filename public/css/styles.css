@@ -187,10 +187,6 @@ p {
 }
 
 /* About us section */
-#club.white-section {
-    background-color: #ffffff;
-}
-
 .about-title {
     font-size: 2.5rem;
     color: #3B5998;
@@ -205,16 +201,31 @@ p {
 
 .about-content {
     text-align: left;
+    background: #ffffff;
+    padding: 3% 4%;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.about-content:hover {
+    transform: scale(1.02);
 }
 
 .about-img {
-    width: 75%;
-    margin-left: 10%;
-    margin-top: 5%;
+    width: 80%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    background-color: #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border: 2px solid #3B5998;
 }
 
 .about-text {
     margin: 4% 0;
+    padding: 2%;
+    color: #ffffff;
 }
 
 .about-btn {
@@ -228,32 +239,104 @@ p {
     border-color: #8A2BE2;
 }
 
-/* contact section */
-#footer .container-fluid {
-    padding: 3% 12%;
+/* footer section */
+#footer-main .container-fluid {
+    padding: 5% 6% 2% 6%;
+}
+
+.footer-brand {
+    font-family: "Ubuntu", system-ui;
+    font-size: 1.5rem;
+    font-weight: 500;
+    transition: 0.5s ease;
+    color: #ffffff;
+    text-decoration: none;
+    text-align: left;
+}
+
+.footer-brand:hover {
+    color: #3795BD;
+}
+
+.footer-item {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.footer-item:hover {
+    color: #3795BD;
+}
+
+.footer-contact-icons a {
+    text-decoration: none;
+    color: white;
+    margin: 0 3%;
+}
+
+.footer-contact-icons a i {
+    font-size: 1.5rem;
+}
+
+.footer-contact-icons a:hover {
+    color: #3795BD;
+}
+
+p.Copyright {
+    text-align: center;
+    color: #E6E6FA;
+}
+
+/************************************** Separated Pages***********************************/
+/* contact page*/
+.message {
+    width: 100%;
+    height: 90%;
+}
+
+.contact-infos {
+    padding: 2% 5%;
+}
+
+.contact-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 8%;
+    text-align: left;
+}
+
+.contact-subtitle {
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    line-height: 1.5;
+    font-size: 1.5rem;
+    margin: 8% 0;
+    text-align: left;
+}
+
+.contact-icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 5% 0;
 }
 
 .contact-icons a {
-    color: white;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    margin: 2%;
     transform: 2.3s ease;
     text-decoration: none;
+    color: white;
+    margin: 0 10px;
 }
 
 .contact-icons a i {
-    font-size: 2rem;
+    font-size: 2.5rem;
 }
 
 .contact-icons a:hover {
     color: #3795BD;
     transform: scale(1.3) translateY(-5px);
-}
-
-.Copyright {
-    text-align: center;
 }
 
 /* specilities pages */
@@ -345,6 +428,26 @@ hr {
     font-weight: 500;
 }
 
+/*speciality-page-footer */
+.footer-icons {
+    text-align: center;
+}
+
+.footer-icons a {
+    transform: 2.3s ease;
+    text-decoration: none;
+    color: white;
+}
+
+.footer-icons a i {
+    font-size: 2rem;
+}
+
+.footer-icons a:hover {
+    color: #3795BD;
+    transform: scale(1.3) translateY(-5px);
+}
+
 /* login and signup  */
 .form {
     text-align: left;
@@ -426,18 +529,43 @@ hr {
     text-decoration: none;
 }
 
-/* dashboard */
-.search-bar {
-    padding: 0;
-    margin: 0;
-    width: 40%;
+/* files page */
+.files-col {
+    background-color: #ffffff;
+    padding: 2%;
+    border-radius: 15px;
+    transition: transform 0.3s ease-in-out;
+    width: 100%;
 }
 
-.search-input {
-    margin: 0;
+.files-col:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 20px 5px rgba(141, 22, 201, 0.228);
+
 }
 
-.search-btn {
-    border-radius: 50%;
+.files-btn {
+    text-align: left;
+}
+
+.files-btn:hover {
+    background-color: #EDE7F6;
+}
+
+.files-btn:focus {
     border: none;
+}
+
+.files-icon {
+    text-decoration: none;
+    color: #5f0dab;
+    margin: 0 10px;
+}
+
+.files-icon i {
+    font-size: 2rem;
+}
+
+.custom-border {
+    border-bottom: 3px solid #5f0dab !important;
 }

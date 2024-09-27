@@ -1,53 +1,44 @@
 <%- include('../parts/head') %>
     <%- include('../parts/navAdmin') %>
+        <section class="white-section">
+            <div class="container-fluid">
+                <h1 id="year1" class="year-title">
+                    Majors </h2>
+                    <hr>
+                    <a href="/dashboard/major/add" class="btn btn-success mb-5">Add New Major</a>
 
-        <div class="container mt-5">
-            <h1 class="mb-4">Majors Dashboard</h1>
-            <!-- Button to Add New Major -->
-            <div class="container my-5">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb p-3 bg-body-tertiary rounded-3">
-                        <li class="breadcrumb-item active"><a href="/dashboard/majors">Majors</a></li>
-                    </ol>
-                </nav>
+                    <% if (majors.length> 0) { %>
+                        <div class="files-col">
+                            <ul class=" list-group list-group-flush">
+                                <% majors.forEach((major, index)=> { %>
+                                    <li
+                                        class="files-btn list-group-item d-flex justify-content-between align-items-center">
+                                        <button class="btn" type="button">
+                                            <span class="files-icon"><i class="fa-solid fa-graduation-cap"></i></span>
+                                            <%= major.name %>
+                                        </button>
+                                        <div>
+                                            <a href="/dashboard/major/update/<%= major._id %>"
+                                                class="btn btn-warning btn-sm me-2">Update</a>
+
+                                            <form action="/dashboard/major/delete/<%= major._id %>" method="POST"
+                                                style="display:inline;">
+                                                <button type="submit" class="btn btn-danger btn-sm me-2"
+                                                    onclick="return confirm('Are you sure you want to delete this major?');">Delete</button>
+                                            </form>
+
+                                            <a href="/dashboard/major/<%= major._id %>/years"
+                                                class="btn btn-primary sign-btn btn-sm">View Submajors</a>
+                                        </div>
+                                    </li>
+
+                                    <% }); %>
+                            </ul>
+                            <% } else { %>
+                                <div class="alert alert-warning" role="alert">
+                                    No Majors available.
+                                </div>
+                                <% } %>
+                        </div>
             </div>
-            <a href="/dashboard/major/add" class="btn btn-success mb-4">Add New Major</a>
-
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Major Name</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <% majors.forEach((major, index)=> { %>
-                        <tr>
-                            <td>
-                                <%= index + 1 %>
-                            </td>
-                            <td>
-                                <%= major.name %>
-                            </td>
-                            <td>
-                                <!-- Update Button -->
-                                <a href="/dashboard/major/update/<%= major._id %>"
-                                    class="btn btn-warning btn-sm">Update</a>
-
-                                <!-- Delete Button -->
-                                <form action="/dashboard/major/delete/<%= major._id %>" method="POST"
-                                    style="display:inline;">
-                                    <button type="submit" class="btn btn-danger btn-sm"
-                                        onclick="return confirm('Are you sure you want to delete this major?');">Delete</button>
-                                </form>
-
-                                <!-- View Years Button -->
-                                <a href="/dashboard/major/<%= major._id %>/years" class="btn btn-info btn-sm">View
-                                    Submajors</a>
-                            </td>
-                        </tr>
-                        <% }) %>
-                </tbody>
-            </table>
-        </div>
+        </section>

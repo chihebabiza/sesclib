@@ -1,67 +1,58 @@
 <%- include('../parts/head') %>
 
     <body>
-        <div class="container mt-5">
-            <h1 class="mb-4">Documents for Subject: <%= subject.name %>
-            </h1>
-            <div class="container my-5">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb p-3 bg-body-tertiary rounded-3">
-                        <li class="breadcrumb-item"><a href="/dashboard/majors">Majors</a></li>
-                        <li class="breadcrumb-item"><a
-                                href="/dashboard/major/<%= subject.major._id %>/years">Submajors</a></li>
-                        <li class="breadcrumb-item"><a
-                                href="/dashboard/major/<%= subject.major._id %>/year/<%= subject.year._id%>/subjects">Subjects</a>
-                        </li>
-                        <li class="breadcrumb-item active" aria-current="page">Documents</li>
-                    </ol>
-                </nav>
-            </div>
-            <a href="/dashboard/subject/<%= subject._id%>/document/add" class="btn btn-success mb-4">Add
-                Document</a>
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th scope="col">Title</th>
-                        <th scope="col">Type</th>
-                        <th scope="col">Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <% if (documents.length> 0) { %>
-                        <% documents.forEach(document=> { %>
-                            <tr>
-                                <td>
-                                    <%= document.name %>
-                                </td>
-                                <td>
-                                    <%= document.type.name %>
-                                </td>
-                                <td>
-                                    <form
-                                        action="/dashboard/subject/<%= subject._id%>/document/update/<%= document._id %>"
-                                        method="GET" style="display:inline;">
-                                        <button type="submit" class="btn btn-warning btn-sm">Update</button>
-                                    </form>
-                                    <form
-                                        action="/dashboard/subject/<%= subject._id%>/document/delete/<%= document._id %>"
-                                        method="POST" style="display:inline;">
-                                        <button type="submit" class="btn btn-danger btn-sm"
-                                            onclick="return confirm('Are you sure you want to delete this major?');">Delete</button>
-                                    </form>
-                                    <a href="<%= document.path %>" target="_blank" class="btn btn-info btn-sm">View</a>
-                                </td>
-                            </tr>
-                            <% }) %>
-                                <% } else { %>
-                                    <tr>
-                                        <td colspan="3" class="text-center">No documents found for this subject.
-                                        </td>
-                                    </tr>
-                                    <% } %>
-                </tbody>
-            </table>
-        </div>
+        <%- include('../parts/head') %>
+
+            <%- include('../parts/head') %>
+
+                <section class="white-section">
+                    <div class="container-fluid">
+                        <h1 id="year1" class="year-title">
+                            Documents for <%= subject.name %>
+                        </h1>
+                        <hr>
+                        <a href="/dashboard/subject/<%= subject._id%>/document/add" class="btn btn-success mb-4">Add
+                            Document</a>
+
+                        <% if (documents.length> 0) { %>
+                            <div class="files-col">
+                                <ul class=" list-group list-group-flush">
+                                    <% documents.forEach(document=> { %>
+                                        <li
+                                            class="files-btn list-group-item d-flex justify-content-between align-items-center">
+                                            <button class="btn" type="button">
+                                                <span class="files-icon"><i class="fa-solid fa-file-pdf"></i></span>
+                                                <%= document.name %> - <%= document.type.name %>
+                                            </button>
+                                            <div>
+                                                <form
+                                                    action="/dashboard/subject/<%= subject._id%>/document/update/<%= document._id %>"
+                                                    method="GET" style="display:inline;">
+                                                    <button type="submit" class="btn btn-warning btn-sm">Update</button>
+                                                </form>
+                                                <form
+                                                    action="/dashboard/subject/<%= subject._id%>/document/delete/<%= document._id %>"
+                                                    method="POST" style="display:inline;">
+                                                    <button type="submit" class="btn btn-danger btn-sm"
+                                                        onclick="return confirm('Are you sure you want to delete this major?');">Delete</button>
+                                                </form>
+                                                <a href="<%= document.path %>" target="_blank"
+                                                    class="btn btn-info btn-sm">View</a>
+                                            </div>
+                                        </li>
+                                        <% }) %>
+                                            <% } else { %>
+                                                <div class="alert alert-warning" role="alert">
+                                                    No Documents found for this Subject.
+                                                </div>
+                                                <% } %>
+                                </ul>
+                            </div><br><br>
+                            <a href="/dashboard/major/<%= subject.major._id %>/year/<%= subject.year._id%>/subjects"
+                                class="btn btn-secondary sign-btn">Back to
+                                Subjects</a>
+                    </div>
+                </section>
     </body>
 
     </html>

@@ -3,10 +3,10 @@
 
         <section class="colored-section" id="cs-lmd-home">
             <div class="container-fluid mt-5">
-                <h1 class="speciality-page-title">
+                <h1 class="speciality-page-title text-center">
                     <%= major.name %> Resources
                 </h1>
-                <div class="d-flex justify-content-center align-items-center mb-4">
+                <div class="d-flex flex-wrap justify-content-center align-items-center mb-4">
                     <% years.forEach((year, index)=> { %>
                         <% if (year.hasSubmajors.length> 0) { %>
                             <div class="dropdown mx-2">
@@ -16,11 +16,12 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <% year.hasSubmajors.forEach(submajor=> { %>
-                                        <!-- Add unique id for each submajor -->
-                                        <li><a class="dropdown-item"
+                                        <li>
+                                            <a class="dropdown-item"
                                                 href="#submajor<%= year._id %>-<%= submajor._id %>">
                                                 <%= submajor.name %>
-                                            </a></li>
+                                            </a>
+                                        </li>
                                         <% }) %>
                                 </ul>
                             </div>
@@ -31,7 +32,6 @@
                                 <% } %>
                                     <% }) %>
                 </div>
-            </div>
             </div>
         </section>
 
@@ -47,7 +47,7 @@
 
                             <div class="row">
                                 <% year.semester.forEach(semester=> { %>
-                                    <div class="col-lg-6 semester-col">
+                                    <div class="col-lg-6 col-md-12 semester-col mb-3"> <!-- Added col-md-12 -->
                                         <h3 class="Semester-title">
                                             <%= semester %>
                                         </h3>
@@ -64,8 +64,8 @@
                                                             <ul class="dropdown-menu w-100 module-dropdown">
                                                                 <% subject.types.forEach(type=> { %>
                                                                     <li><a class="dropdown-item"
-                                                                            href="/major/<%= majorId%>/documents/<%= type.name %>/<%= subject._id %>">
-                                                                            <%= type %>
+                                                                            href="/major/<%= majorId %>/documents/<%= type.name %>/<%= subject._id %>">
+                                                                            <%= type.name %>
                                                                         </a></li>
                                                                     <% }); %>
                                                             </ul>
@@ -86,7 +86,7 @@
 
                                     <div class="row">
                                         <% year.semester.forEach(semester=> { %>
-                                            <div class="col-lg-6 semester-col">
+                                            <div class="col-lg-6 col-md-12 semester-col mb-3"> <!-- Added col-md-12 -->
                                                 <h3 class="Semester-title">
                                                     <%= semester %>
                                                 </h3>
@@ -104,7 +104,7 @@
                                                                         <% subject.types.forEach(type=> { %>
                                                                             <li>
                                                                                 <a class="dropdown-item"
-                                                                                    href="/major/<%= majorId%>/documents/<%= type.name %>/<%= subject._id %>">
+                                                                                    href="/major/<%= majorId %>/documents/<%= type.name %>/<%= subject._id %>">
                                                                                     <%= type.name %>
                                                                                 </a>
                                                                             </li>
@@ -123,6 +123,4 @@
             </div>
         </section>
 
-        </body>
-
-        </html>
+        <%- include('../parts/footer') %>

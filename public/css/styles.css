@@ -152,7 +152,7 @@ p {
 }
 
 .specialty-button {
-    display: block;
+    display: inline-block;
     margin-top: 15px;
     background-color: #8A2BE2;
     border: none;
@@ -390,11 +390,19 @@ p.Copyright {
 
 .semester-col {
     background-color: #ffffff;
-    margin: 0% 2.5%;
+    margin: 0 2.5%;
     width: 45%;
     padding: 4%;
     border-radius: 15px;
     transition: transform 0.3s ease-in-out;
+}
+
+@media (max-width: 767px) {
+    .semester-col {
+        width: 100%;
+        margin: 0;
+        margin-bottom: 1rem;
+    }
 }
 
 .semester-col:hover {
@@ -461,7 +469,26 @@ hr {
     border-radius: 20px;
     transition: transform 0.3s ease-in-out;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    margin: auto;
 }
+
+@media (max-width: 992px) {
+
+    .form {
+        width: 70%;
+        padding: 30px;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .form {
+        width: 90%;
+        padding: 20px;
+        border-radius: 15px;
+    }
+}
+
 
 .form:hover {
     transform: scale(1.02);
@@ -568,4 +595,141 @@ hr {
 
 .custom-border {
     border-bottom: 3px solid #5f0dab !important;
+}
+
+#testimonials {
+    padding: 20px 0;
+}
+
+.quote-icon {
+    font-size: 40px;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+.testimonial-text {
+    font-size: 1.25rem;
+    text-align: center;
+    margin: 10px 0;
+}
+
+@media (max-width: 768px) {
+    .testimonial-text {
+        font-size: 1rem;
+    }
+
+    .about-text {
+        font-size: 1rem;
+    }
+
+    .home-heading {
+        font-size: 2.2rem;
+    }
+}
+
+.white-section {
+    padding: 40px 20px;
+}
+
+.about-title {
+    margin-bottom: 20px;
+}
+
+.about-img {
+    max-width: 100%;
+    height: auto;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+
+.about-text {
+    font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+    .container-fluid {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .year-title {
+        font-size: 24px;
+    }
+
+    .files-btn {
+        flex-direction: column;
+        align-items: flex-start !important;
+    }
+
+    .files-btn button {
+        margin-bottom: 10px;
+        width: 100%;
+        text-align: left;
+    }
+
+    .files-btn div {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        /* Aligns items to the left */
+    }
+
+    .files-btn div a,
+    .files-btn div form {
+        flex: 1 0 30%;
+        /* Allows for three items in one row */
+        margin: 0 5px 5px 0;
+        /* Margin to create space */
+    }
+
+    .files-btn div form {
+        display: flex;
+        /* Flex display for forms */
+        justify-content: center;
+        /* Center the content in forms */
+    }
+
+    .files-btn div .btn {
+        width: 100%;
+        padding: 5px;
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .files-btn div form button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        /* Ensures full width for buttons */
+    }
+}
+
+@media (max-width: 576px) {
+
+    .files-btn div a,
+    .files-btn div form {
+        flex: 1 0 100%;
+        margin: 0;
+    }
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.table th,
+.table td {
+    white-space: nowrap;
 }

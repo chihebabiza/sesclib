@@ -1,60 +1,62 @@
 <%- include('../parts/head') %>
+    <%- include('../parts/navAdmin') %>
+        <section class="white-section">
+            <div class="container-fluid">
+                <!-- Title -->
+                <h1 id="year1" class="year-title text-center">
+                    <%= major.name %> Subjects for <%= year.name %>
+                </h1>
+                <hr>
 
-    <section class="white-section">
-        <div class="container-fluid">
-            <!-- Title -->
-            <h1 id="year1" class="year-title text-center">
-                <%= major.name %> Subjects for <%= year.name %>
-            </h1>
-            <hr>
-
-            <!-- Add Subject Button -->
-            <div class="d-flex justify-content-center mb-4">
-                <a href="/dashboard/major/<%= major._id %>/year/<%= year._id%>/subject/add" class="btn btn-success">Add
-                    Subject</a>
-            </div>
-
-            <!-- Subjects List -->
-            <% if (subjects.length> 0) { %>
-                <div class="files-col">
-                    <ul class="list-group list-group-flush">
-                        <% subjects.forEach(subject=> { %>
-                            <li
-                                class="files-btn list-group-item d-flex flex-column flex-md-row justify-content-between align-items-center mb-2">
-                                <!-- Subject Name and Semester -->
-                                <button class="btn text-start" type="button">
-                                    <span class="files-icon"><i class="fa-solid fa-graduation-cap"></i></span>
-                                    <%= subject.name %> - <%= subject.semester %>
-                                </button>
-
-                                <!-- Actions for Each Subject -->
-                                <div class="d-flex justify-content-end flex-wrap mt-2 mt-md-0">
-                                    <a href="/dashboard/major/<%= major._id %>/year/<%= year._id %>/subject/update/<%= subject._id %>"
-                                        class="btn btn-warning btn-sm me-2">Update</a>
-                                    <form
-                                        action="/dashboard/major/<%= major._id %>/year/<%= year._id %>/subject/delete/<%= subject._id %>"
-                                        method="POST" style="display:inline;">
-                                        <button type="submit" class="btn btn-danger btn-sm me-2"
-                                            onclick="return confirm('Are you sure you want to delete this subject?');">Delete</button>
-                                    </form>
-                                    <a href="/dashboard/subject/<%= subject._id %>/documents"
-                                        class="mt-2 mt-md-0 btn btn-primary sign-btn btn-sm">View Documents</a>
-                                </div>
-                            </li>
-                            <% }) %>
-                    </ul>
+                <!-- Add Subject Button -->
+                <div class="d-flex justify-content-center mb-4">
+                    <a href="/dashboard/major/<%= major._id %>/year/<%= year._id%>/subject/add"
+                        class="btn btn-success">Add
+                        Subject</a>
                 </div>
-                <% } else { %>
-                    <!-- No Subjects Found Alert -->
-                    <div class="alert alert-warning text-center" role="alert">
-                        No Subjects found for this year.
-                    </div>
-                    <% } %>
 
-                        <!-- Back Button -->
-                        <div class="text-center mt-4">
-                            <a href="/dashboard/major/<%= major._id %>/years" class="btn btn-secondary sign-btn">Back to
-                                Submajors</a>
+                <!-- Subjects List -->
+                <% if (subjects.length> 0) { %>
+                    <div class="files-col">
+                        <ul class="list-group list-group-flush">
+                            <% subjects.forEach(subject=> { %>
+                                <li
+                                    class="files-btn list-group-item d-flex flex-column flex-md-row justify-content-between align-items-center mb-2">
+                                    <!-- Subject Name and Semester -->
+                                    <button class="btn text-start" type="button">
+                                        <span class="files-icon"><i class="fa-solid fa-graduation-cap"></i></span>
+                                        <%= subject.name %> - <%= subject.semester %>
+                                    </button>
+
+                                    <!-- Actions for Each Subject -->
+                                    <div class="d-flex flex-wrap justify-content-md-end">
+                                        <a href="/dashboard/major/<%= major._id %>/year/<%= year._id %>/subject/update/<%= subject._id %>"
+                                            class="btn btn-warning btn-sm me-2 mb-2 mb-md-0">Update</a>
+                                        <form
+                                            action="/dashboard/major/<%= major._id %>/year/<%= year._id %>/subject/delete/<%= subject._id %>"
+                                            method="POST" style="display:inline;">
+                                            <button type="submit" class="btn btn-danger btn-sm me-2"
+                                                onclick="return confirm('Are you sure you want to delete this subject?');">Delete</button>
+                                        </form>
+                                        <a href="/dashboard/subject/<%= subject._id %>/documents"
+                                            class="mt-2 mt-md-0 btn btn-primary sign-btn btn-sm">View Documents</a>
+                                    </div>
+                                </li>
+                                <% }) %>
+                        </ul>
+                    </div>
+                    <% } else { %>
+                        <!-- No Subjects Found Alert -->
+                        <div class="alert alert-warning text-center" role="alert">
+                            No Subjects found for this year.
                         </div>
-        </div>
-    </section>
+                        <% } %>
+
+                            <!-- Back Button -->
+                            <div class="text-center mt-4">
+                                <a href="/dashboard/major/<%= major._id %>/years"
+                                    class="btn btn-secondary sign-btn">Back to
+                                    Submajors</a>
+                            </div>
+            </div>
+        </section>

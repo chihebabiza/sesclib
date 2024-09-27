@@ -99,7 +99,7 @@ exports.getSubmajorsPage = async (req, res) => {
             year.hasSubmajors = submajors.length > 0 ? submajors : [];
         }
 
-        res.render('admin/getSubmajor', { major, years });
+        res.render('admin/getSubmajor', { major, years, page: 'submajors' });
     } catch (error) {
         console.error('Error fetching subjects:', error);
         res.render('user/error', { message: 'An unexpected error occurred. Please try again later.' });
@@ -237,7 +237,8 @@ exports.getSubjects = async (req, res) => {
             major,
             year,
             submajor,
-            subjects
+            subjects,
+            page: 'subjects'
         });
     } catch (error) {
         console.error('Error fetching subjects by major, year, and submajor:', error);
@@ -264,7 +265,7 @@ exports.getDocuments = async (req, res) => {
 
         const documents = await Document.find({ subject: subjectId }).populate('type');
 
-        res.render('admin/getDocument', { documents, subject });
+        res.render('admin/getDocument', { documents, subject, page: 'documents' });
     } catch (error) {
         console.error('Error fetching documents:', error);
         res.render('user/error', { message: 'An unexpected error occurred. Please try again later.' });

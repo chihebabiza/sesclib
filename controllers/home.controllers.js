@@ -13,7 +13,7 @@ exports.getResourses = async (req, res) => {
         res.render('user/resources', { majors, page: 'resources', session: req.session });
     } catch (error) {
         console.error('Error fetching resources:', error);
-        res.render('user/error', { message: 'An unexpected error occurred. Please try again later.' });
+        res.render('user/error', { message: 'Error fetching resources. Please try again later.', session: req.session });
     } finally {
         await disconnectDB();
     }
@@ -26,7 +26,7 @@ exports.getHome = async (req, res) => {
         res.render('user/index', { majors, page: 'home', session: req.session });
     } catch (error) {
         console.error('Error fetching home page:', error);
-        res.render('user/error', { message: 'An unexpected error occurred. Please try again later.' });
+        res.render('user/error', { message: 'Error fetching home page. Please try again later.', session: req.session });
     } finally {
         await disconnectDB();
     }
@@ -70,16 +70,21 @@ exports.getMajor = async (req, res) => {
 
         res.render('user/major', { major, years, majorId, page: 'resources', session: req.session });
     } catch (error) {
-        console.error('Error fetching subjects and documents:', error);
-        res.render('user/error', { message: 'An unexpected error occurred. Please try again later.' });
+        console.error('Error fetching Major', error);
+        res.render('user/error', { message: 'Error fetching Major. Please try again later.', session: req.session });
     } finally {
         await disconnectDB();
     }
 };
 
 exports.getLogin = (req, res) => {
-    const { success, error } = req.flash();
-    res.render('user/login', { page: 'login', success, error });
+    try {
+        const { success, error } = req.flash();
+        res.render('user/login', { page: 'login', success, error });
+    } catch (err) {
+        console.error('Error fetching Login page:', err);
+        res.render('user/error', { message: 'Error fetching Login page. Please try again later.' });
+    }
 };
 
 exports.getRegister = async (req, res) => {
@@ -99,7 +104,7 @@ exports.getRegister = async (req, res) => {
         });
     } catch (err) {
         console.error('Error fetching registration page:', err);
-        res.render('user/error', { message: 'An unexpected error occurred. Please try again later.' });
+        res.render('user/error', { message: 'Error fetching registration page. Please try again later.' });
     } finally {
         await disconnectDB();
     }
@@ -126,7 +131,7 @@ exports.getDocuments = async (req, res) => {
         res.render('user/document', { documents, subject, type, majorId });
     } catch (err) {
         console.error('Error fetching documents:', err);
-        res.render('user/error', { message: 'An unexpected error occurred. Please try again later.' });
+        res.render('user/error', { message: 'Error fetching documents. Please try again later.', session: req.session });
     } finally {
         await disconnectDB();
     }
@@ -137,7 +142,7 @@ exports.getAbout = (req, res) => {
         res.render('user/about', { page: 'about', session: req.session });
     } catch (err) {
         console.error('Error fetching about page:', err);
-        res.render('user/error', { message: 'An unexpected error occurred. Please try again later.' });
+        res.render('user/error', { message: 'An unexpected error occurred. Please try again later.', session: req.session });
     }
 };
 
@@ -146,6 +151,6 @@ exports.getContact = (req, res) => {
         res.render('user/contact', { page: 'contact', session: req.session });
     } catch (err) {
         console.error('Error fetching contact page:', err);
-        res.render('user/error', { message: 'An unexpected error occurred. Please try again later.' });
+        res.render('user/error', { message: 'An unexpected error occurred. Please try again later.', session: req.session });
     }
 };

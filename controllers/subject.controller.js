@@ -9,24 +9,21 @@ exports.addSubject = async (req, res) => {
         const { name, types, semester } = req.body;
 
         if (!name || !types || !semester || !majorId || !yearId) {
-            return res.status(400).send('All fields are required');
+            req.flash('error', 'All fields are required');
+            return res.redirect(`/dashboard/major/${majorId}/year/${yearId}/subject/add`);
         }
 
         const newSubject = new Subject({
-            name,
-            types,
-            semester,
-            major: majorId,
-            year: yearId,
-            submajorId
+            name, types, semester, major: majorId, year: yearId, submajorId
         });
 
         await newSubject.save();
 
-        res.redirect(`/dashboard/major/${majorId}/year/${yearId}/subjects?success=SubjectAdded`);
+        res.redirect(`/dashboard/major/${majorId}/year/${yearId}/subjects`);
     } catch (error) {
         console.error('Error adding subject:', error);
-        res.render('user/error', { message: 'An unexpected error occurred. Please try again later.' });
+        req.flash('error', 'Error adding subject. Please try again later.');
+        res.redirect(`/dashboard/major/${majorId}/year/${yearId}/subjects`);
     } finally {
         await disconnectDB();
     }
@@ -40,26 +37,24 @@ exports.updateSubject = async (req, res) => {
         const { name, types, semester } = req.body;
 
         if (!name || !types || !semester) {
-            return res.status(400).send('All fields are required');
+            req.flash('error', 'All fields are required');
+            return res.redirect(`/dashboard/major/${majorId}/year/${yearId}/subject/update/${req.params.subjectId}`);
         }
 
         const updatedSubject = await Subject.findByIdAndUpdate(req.params.subjectId, {
-            name,
-            types,
-            semester,
-            majorId,
-            yearId,
-            submajorId
+            name, types, semester, major: majorId, year: yearId, submajor: submajorId
         }, { new: true });
 
         if (!updatedSubject) {
-            return res.status(404).send('Subject not found');
+            req.flash('error', 'Subject not found');
+            return res.redirect(`/dashboard/major/${majorId}/year/${yearId}/subjects`);
         }
 
-        res.redirect(`/dashboard/major/${majorId}/year/${yearId}/subjects?success=SubjectUpdated`);
+        res.redirect(`/dashboard/major/${majorId}/year/${yearId}/subjects`);
     } catch (error) {
         console.error('Error updating subject:', error);
-        res.render('user/error', { message: 'An unexpected error occurred. Please try again later.' });
+        req.flash('error', 'Error updating subject. Please try again later.');
+        res.redirect(`/dashboard/major/${majorId}/year/${yearId}/subject/edit/${req.params.subjectId}`);
     } finally {
         await disconnectDB();
     }

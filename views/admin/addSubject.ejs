@@ -7,49 +7,55 @@
                     class="mx-auto login-form form">
                     <h4 class="form-heading">Add New Subject</h4>
 
-                    <div class="input-group mb-3">
-                        <span class="input-group-text">
-                            <i class="fa-solid fa-book"></i>
-                        </span>
-                        <input type="text" name="name" class="form-control" placeholder="Subject Name" required>
-                    </div>
-
-                    <div class="input-group">
-                        <span class="input-group-text">
-                            <i class="fa-solid fa-calendar"></i>
-                        </span>
-                        <div class="form-control">
-                            <label class="h6 fw-bold">Select Types:</label>
-                            <ul class="list-unstyled">
-                                <% types.forEach(type=> { %>
-                                    <li>
-                                        <input type="checkbox" name="types[]" value="<%= type._id %>"
-                                            id="type-<%= type._id %>">
-                                        <label for="type-<%= type._id %>">
-                                            <%= type.name %>
-                                        </label>
-                                    </li>
-                                    <% }); %>
-                            </ul>
+                    <% if (error) { %>
+                        <div class="alert alert-danger">
+                            <%= error %>
                         </div>
-                    </div>
+                        <% } %>
 
-                    <div class="input-group mb-3">
-                        <span class="input-group-text">
-                            <i class="fa-solid fa-book-open"></i>
-                        </span>
-                        <select name="semester" class="form-control" required>
-                            <option selected disabled hidden>Select Semester</option>
-                            <option value="Semester 1">Semester 1</option>
-                            <option value="Semester 2">Semester 2</option>
-                        </select>
-                    </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">
+                                    <i class="fa-solid fa-book"></i>
+                                </span>
+                                <input type="text" name="name" class="form-control" placeholder="Subject Name" required>
+                            </div>
 
-                    <button type="submit" class="btn btn-primary login-btn">Add Subject</button>
-                    <p class="form-text">Want to go back? <a
-                            href="/dashboard/major/<%= major._id %>/year/<%= year._id %>/subjects"
-                            class="form-link">View
-                            Subjects</a></p>
+                            <div class="input-group">
+                                <span class="input-group-text">
+                                    <i class="fa-solid fa-calendar"></i>
+                                </span>
+                                <div class="form-control">
+                                    <label class="h6 fw-bold">Select Types:</label>
+                                    <ul class="list-unstyled">
+                                        <% types.forEach(type=> { %>
+                                            <li>
+                                                <input type="checkbox" name="types[]" value="<%= type._id %>"
+                                                    id="type-<%= type._id %>">
+                                                <label for="type-<%= type._id %>">
+                                                    <%= type.name %>
+                                                </label>
+                                            </li>
+                                            <% }); %>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">
+                                    <i class="fa-solid fa-book-open"></i>
+                                </span>
+                                <select name="semester" class="form-control" required>
+                                    <option selected disabled hidden>Select Semester</option>
+                                    <option value="Semester 1">Semester 1</option>
+                                    <option value="Semester 2">Semester 2</option>
+                                </select>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary login-btn">Add Subject</button>
+                            <p class="form-text">Want to go back? <a
+                                    href="/dashboard/major/<%= major._id %>/year/<%= year._id %>/subjects"
+                                    class="form-link">View
+                                    Subjects</a></p>
                 </form>
             </div>
         </section>

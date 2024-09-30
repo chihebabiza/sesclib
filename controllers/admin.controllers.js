@@ -4,30 +4,22 @@ const Submajor = require('../models/submajor.model');
 const Type = require('../models/type.model');
 const Subject = require('../models/subject.model');
 const Document = require('../models/document.model');
-const { connectDB, disconnectDB } = require('../config/db');
 const User = require('../models/user.model');
+const { connectDB, disconnectDB } = require('../config/db');
 
 exports.getDashboard = async (req, res) => {
     try {
-        await connectDB()
+        await connectDB();
         const userCount = await User.countDocuments();
-
         const documentCount = await Document.countDocuments();
-
         const majorCount = await Major.countDocuments();
-
         const submajorCount = await Submajor.countDocuments();
-
         res.render('admin/dashboard', {
-            page: 'admin',
-            userCount,
-            documentCount,
-            majorCount,
-            submajorCount
+            page: 'admin', userCount, documentCount, majorCount, submajorCount, session: req.session
         });
     } catch (error) {
         console.error('Error opening dashboard:', error);
-        res.render('user/error', { message: 'An unexpected error occurred. Please try again later.' });
+        res.render('user/error', { message: 'Error opening dashboard. Please try again later.', session: req.session });
     } finally {
         await disconnectDB();
     }
@@ -40,11 +32,12 @@ exports.getUsersDashboard = async (req, res) => {
         console.log(users);
         res.render('admin/getUser', {
             page: 'users',
-            users
+            users,
+            session: req.session
         });
     } catch (error) {
         console.error('Error fetching users:', error);
-        res.render('user/error', { message: 'An unexpected error occurred. Please try again later.' });
+        res.render('user/error', { message: 'Error fetching users. Please try again later.', session: req.session });
     } finally {
         await disconnectDB();
     }
@@ -54,10 +47,10 @@ exports.getMajorsPage = async (req, res) => {
     try {
         await connectDB();
         const majors = await Major.find({});
-        res.render('admin/getMajor', { majors, page: 'majors' });
+        res.render('admin/getMajor', { majors, page: 'majors', session: req.session });
     } catch (error) {
         console.error('Error fetching majors:', error);
-        res.render('user/error', { message: 'An unexpected error occurred. Please try again later.' });
+        res.render('user/error', { message: 'Error fetching majors. Please try again later.', session: req.session });
     } finally {
         await disconnectDB();
     }
@@ -68,10 +61,10 @@ exports.getUpdateMajorPage = async (req, res) => {
         const majorId = req.params.id;
         await connectDB();
         const major = await Major.findById(majorId);
-        res.render('admin/updateMajor', { major });
+        res.render('admin/updateMajor', { major, session: req.session });
     } catch (err) {
-        console.error('Error fetching major:', err);
-        res.render('user/error', { message: 'An unexpected error occurred. Please try again later.' });
+        console.error('Error fetching update major:', err);
+        res.render('user/error', { message: 'Error fetching update major. Please try again later.', session: req.session });
     } finally {
         await disconnectDB();
     }
@@ -79,10 +72,10 @@ exports.getUpdateMajorPage = async (req, res) => {
 
 exports.getAddMajorPage = async (req, res) => {
     try {
-        res.render('admin/addMajor');
+        res.render('admin/addMajor', { session: req.session });
     } catch (err) {
-        console.error('Error fetching major:', err);
-        res.render('user/error', { message: 'An unexpected error occurred. Please try again later.' });
+        console.error('Error fetching add major:', err);
+        res.render('user/error', { message: 'Error fetching add major. Please try again later.', session: req.session });
     }
 };
 
@@ -99,10 +92,10 @@ exports.getSubmajorsPage = async (req, res) => {
             year.hasSubmajors = submajors.length > 0 ? submajors : [];
         }
 
-        res.render('admin/getSubmajor', { major, years, page: 'submajors' });
+        res.render('admin/getSubmajor', { major, years, page: 'submajors', session: req.session });
     } catch (error) {
-        console.error('Error fetching subjects:', error);
-        res.render('user/error', { message: 'An unexpected error occurred. Please try again later.' });
+        console.error('Error fetching submajors:', error);
+        res.render('user/error', { message: 'Error fetching submajors. Please try again later.', session: req.session });
     } finally {
         await disconnectDB();
     }
@@ -117,11 +110,12 @@ exports.getUpdateSubmajorPage = async (req, res) => {
 
         const majors = await Major.find();
         const allYears = await Year.find();
+        const { error } = req.flash();
 
-        res.render('admin/updateSubmajor', { submajor, majors, years: allYears, major: submajor.major });
+        res.render('admin/updateSubmajor', { error, submajor, majors, years: allYears, major: submajor.major, session: req.session });
     } catch (error) {
-        console.error('Error fetching submajor:', error);
-        res.render('user/error', { message: 'An unexpected error occurred. Please try again later.' });
+        console.error('Error fetching update submajor:', error);
+        res.render('user/error', { message: 'Error fetching update submajor. Please try again later.', session: req.session });
     } finally {
         await disconnectDB();
     }
@@ -133,15 +127,16 @@ exports.getAddSubmajorPage = async (req, res) => {
         const majorId = req.params.id;
         const major = await Major.findById(majorId);
         const years = await Year.find({});
+        const { error } = req.flash();
 
         if (!major) {
             return res.status(404).send('Major not found');
         }
 
-        res.render('admin/addSubmajor', { major, years });
+        res.render('admin/addSubmajor', { major, years, session: req.session, error });
     } catch (error) {
-        console.error('Error fetching majors:', error);
-        res.render('user/error', { message: 'An unexpected error occurred. Please try again later.' });
+        console.error('Error fetching add major:', error);
+        res.render('user/error', { message: 'Error fetching add major. Please try again later.', session: req.session });
     } finally {
         await disconnectDB();
     }
@@ -159,17 +154,14 @@ exports.getAddSubjectPage = async (req, res) => {
         if (!year) return res.status(404).send('Year not found');
 
         const types = await Type.find();
+        const { error } = req.flash();
 
         res.render('admin/addSubject', {
-            major,
-            year,
-            types,
-            yearId,
-            majorId
+            major, year, types, yearId, majorId, session: req.session, error
         });
     } catch (error) {
-        console.error('Error fetching major:', error);
-        res.render('user/error', { message: 'An unexpected error occurred. Please try again later.' });
+        console.error('Error fetching add subject:', error);
+        res.render('user/error', { message: 'Error fetching add subject. Please try again later.', session: req.session });
     } finally {
         await disconnectDB();
     }
@@ -195,11 +187,12 @@ exports.getUpdateSubjectPage = async (req, res) => {
         }
 
         const types = await Type.find();
+        const { error } = req.flash();
 
-        res.render('admin/updateSubject', { subject, major, year, types });
+        res.render('admin/updateSubject', { subject, major, year, types, session: req.session, error });
     } catch (error) {
         console.error('Error fetching subject for update:', error);
-        res.render('user/error', { message: 'An unexpected error occurred. Please try again later.' });
+        res.render('user/error', { message: 'Error fetching subject for update. Please try again later.', session: req.session });
     } finally {
         await disconnectDB();
     }
@@ -234,15 +227,11 @@ exports.getSubjects = async (req, res) => {
         }
 
         res.render('admin/getSubject', {
-            major,
-            year,
-            submajor,
-            subjects,
-            page: 'subjects'
+            major, year, submajor, subjects, page: 'subjects', session: req.session
         });
     } catch (error) {
-        console.error('Error fetching subjects by major, year, and submajor:', error);
-        res.render('user/error', { message: 'An unexpected error occurred. Please try again later.' });
+        console.error('Error fetching subjects:', error);
+        res.render('user/error', { message: 'Error fetching subjects. Please try again later.', session: req.session });
     } finally {
         await disconnectDB();
     }
@@ -265,10 +254,10 @@ exports.getDocuments = async (req, res) => {
 
         const documents = await Document.find({ subject: subjectId }).populate('type');
 
-        res.render('admin/getDocument', { documents, subject, page: 'documents' });
+        res.render('admin/getDocument', { documents, subject, page: 'documents', session: req.session });
     } catch (error) {
         console.error('Error fetching documents:', error);
-        res.render('user/error', { message: 'An unexpected error occurred. Please try again later.' });
+        res.render('user/error', { message: 'Error fetching documents. Please try again later.', session: req.session });
     } finally {
         await disconnectDB();
     }
@@ -278,7 +267,7 @@ exports.getAddDocumentPage = async (req, res) => {
     try {
         await connectDB();
         const { subjectId } = req.params;
-
+        const { error } = req.flash();
         const subject = await Subject.findById(subjectId)
             .populate('types')
 
@@ -287,12 +276,11 @@ exports.getAddDocumentPage = async (req, res) => {
         }
 
         res.render('admin/addDocument', {
-            subject,
-            types: subject.types,
+            subject, types: subject.types, session: req.session, error
         });
     } catch (error) {
         console.error('Error fetching subject or types:', error);
-        res.render('user/error', { message: 'An unexpected error occurred. Please try again later.' });
+        res.render('user/error', { message: 'Error fetching subject or types. Please try again later.', session: req.session });
     } finally {
         await disconnectDB();
     }
@@ -302,7 +290,7 @@ exports.getUpdateDocumentPage = async (req, res) => {
     try {
         await connectDB();
         const { subjectId, id } = req.params;
-
+        const { error } = req.flash();
         const subject = await Subject.findById(subjectId)
             .populate('types');
 
@@ -318,12 +306,11 @@ exports.getUpdateDocumentPage = async (req, res) => {
         console.log(subject, document);
 
         res.render('admin/updateDocument', {
-            subject,
-            document,
+            subject, document, session: req.session
         });
     } catch (error) {
         console.error('Error fetching subject or document:', error);
-        res.render('user/error', { message: 'An unexpected error occurred. Please try again later.' });
+        res.render('user/error', { message: 'Error fetching subject or document. Please try again later.', session: req.session });
     } finally {
         await disconnectDB();
     }

@@ -54,14 +54,21 @@ exports.addSubmajor = async (req, res) => {
     const majorId = req.params.id;
     const { name, years } = req.body;
 
+    if (!name || !years) {
+        req.flash('error', 'All fields are required');
+        return res.redirect(`/dashboard/major/${majorId}/submajor/add`);
+    }
+
     try {
         await connectDB();
+
         const newSubmajor = new Submajor({ name, major: majorId, years });
         await newSubmajor.save();
         res.redirect(`/dashboard/major/${majorId}/years`);
     } catch (error) {
         console.error('Error adding submajor:', error);
-        res.render('user/error', { message: 'An unexpected error occurred. Please try again later.' });
+        req.flash('error', 'Error adding submajor. Please try again later.');
+        res.redirect(`/dashboard/major/${majorId}/submajor/add`);
     } finally {
         await disconnectDB();
     }
@@ -71,13 +78,22 @@ exports.updateSubmajor = async (req, res) => {
     const submajorId = req.params.id;
     const { name, years, major } = req.body;
 
+    if (!name || !years || !major) {
+        req.flash('error', 'All fields are required');
+        return res.redirect(`/dashboard/major/${major}/submajor/update/${submajorId}`);
+    }
+
     try {
         await connectDB();
+
         await Submajor.findByIdAndUpdate(submajorId, { name, major, years }, { new: true });
+
         res.redirect(`/dashboard/major/${major}/years`);
     } catch (error) {
         console.error('Error updating submajor:', error);
-        res.render('user/error', { message: 'An unexpected error occurred. Please try again later.' });
+
+        req.flash('error', 'Error updating submajor. Please try again later.');
+        res.redirect(`/dashboard/major/${major}/submajor/edit/${submajorId}`);
     } finally {
         await disconnectDB();
     }

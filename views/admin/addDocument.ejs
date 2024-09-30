@@ -9,37 +9,43 @@
                     <h4 class="form-heading">Add New Documents for <%= subject.name %>
                     </h4>
 
-                    <!-- Select Document Type from subject.types -->
-                    <div class="input-group mb-3">
-                        <span class="input-group-text">
-                            <i class="fa-solid fa-tags"></i>
-                        </span>
-                        <select class="form-select" name="type" required>
-                            <option selected disabled>Select Document Type</option>
-                            <% subject.types.forEach(type=> { %>
-                                <option value="<%= type._id %>">
-                                    <%= type.name %>
-                                </option>
-                                <% }) %>
-                        </select>
-                    </div>
+                    <% if (error) { %>
+                        <div class="alert alert-danger">
+                            <%= error %>
+                        </div>
+                        <% } %>
+                            <!-- Select Document Type from subject.types -->
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">
+                                    <i class="fa-solid fa-tags"></i>
+                                </span>
+                                <select class="form-select" name="type" required>
+                                    <option selected disabled>Select Document Type</option>
+                                    <% subject.types.forEach(type=> { %>
+                                        <option value="<%= type._id %>">
+                                            <%= type.name %>
+                                        </option>
+                                        <% }) %>
+                                </select>
+                            </div>
 
-                    <!-- PDF File Upload -->
-                    <div class="input-group mb-3">
-                        <span class="input-group-text">
-                            <i class="fa-solid fa-file-pdf"></i>
-                        </span>
-                        <input type="file" name="documents" class="form-control" accept="application/pdf" multiple
-                            required>
-                    </div>
-                    <small class="form-text text-muted">You can upload multiple PDF files.</small>
+                            <!-- PDF File Upload -->
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </span>
+                                <input type="file" name="documents" class="form-control" accept="application/pdf"
+                                    multiple required>
+                            </div>
+                            <small class="form-text text-muted">You can upload multiple PDF files.</small>
 
-                    <!-- Submit Button -->
-                    <button type="submit" class="btn btn-primary login-btn">Add Documents</button>
+                            <!-- Submit Button -->
+                            <button type="submit" class="btn btn-primary login-btn">Add Documents</button>
 
-                    <!-- Back to Subject Page Link -->
-                    <p class="form-text">Want to go back? <a href="/dashboard/subject/<%= subject._id %>/documents"
-                            class="form-link">Back to Subject</a></p>
+                            <!-- Back to Subject Page Link -->
+                            <p class="form-text">Want to go back? <a
+                                    href="/dashboard/subject/<%= subject._id %>/documents" class="form-link">Back to
+                                    Subject</a></p>
                 </form>
             </div>
         </section>

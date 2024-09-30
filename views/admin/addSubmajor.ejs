@@ -3,41 +3,48 @@
     <body>
         <section class="colored-section" id="signup">
             <div class="container-fluid min-vh-100">
-                <form class="mx-auto login-form form" action="/dashboard/major/<%= major._id %>/submajor/add"
-                    method="POST">
+                <form id="yearForm" class="mx-auto login-form form"
+                    action="/dashboard/major/<%= major._id %>/submajor/add" method="POST">
                     <h4 class="form-heading">Add New Submajor</h4>
 
-                    <div class="input-group">
-                        <span class="input-group-text">
-                            <i class="fa-solid fa-user"></i>
-                        </span>
-                        <input type="text" name="name" class="form-control" placeholder="Submajor name" required>
-                    </div>
-
-                    <div class="input-group">
-                        <span class="input-group-text">
-                            <i class="fa-solid fa-calendar"></i>
-                        </span>
-                        <div class="form-control">
-                            <label class="h6 fw-bold">Select Years:</label>
-                            <ul class="list-unstyled">
-                                <% years.forEach(year=> { %>
-                                    <li>
-                                        <input type="checkbox" name="years" value="<%= year._id %>"
-                                            id="year-<%= year.name %>">
-                                        <label for="year-<%= year.name %>">
-                                            <%= year.name %>
-                                        </label>
-                                    </li>
-                                    <% }); %>
-                            </ul>
+                    <% if (error) { %>
+                        <div class="alert alert-danger">
+                            <%= error %>
                         </div>
-                    </div>
+                        <% } %>
+                            <div class="input-group">
+                                <span class="input-group-text">
+                                    <i class="fa-solid fa-user"></i>
+                                </span>
+                                <input type="text" name="name" class="form-control" placeholder="Submajor name"
+                                    required>
+                            </div>
 
-                    <button type="submit" class="btn btn-primary login-btn">Add Submajor</button>
-                    <p class="form-text">Want to go back? <a href="/dashboard/major/<%= major._id %>/years" class="
+                            <div class="input-group">
+                                <span class="input-group-text">
+                                    <i class="fa-solid fa-calendar"></i>
+                                </span>
+                                <div class="form-control">
+                                    <label class="h6 fw-bold">Select Years:</label>
+                                    <ul class="list-unstyled">
+                                        <% years.forEach(year=> { %>
+                                            <li>
+                                                <input type="checkbox" name="years" value="<%= year._id %>"
+                                                    id="year-<%= year.name %>">
+                                                <label for="year-<%= year.name %>">
+                                                    <%= year.name %>
+                                                </label>
+                                            </li>
+                                            <% }); %>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary login-btn">Add Submajor</button>
+                            <p class="form-text">Want to go back? <a href="/dashboard/major/<%= major._id %>/years"
+                                    class="
                             form-link">View
-                            Submajors</a></p>
+                                    Submajors</a></p>
                 </form>
             </div>
         </section>

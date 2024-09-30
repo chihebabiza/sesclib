@@ -7,53 +7,60 @@
                     action="/dashboard/major/<%= major._id %>/submajor/update/<%= submajor._id %>" method="POST">
                     <h4 class="form-heading">Update Submajor</h4>
 
-                    <div class="input-group">
-                        <span class="input-group-text">
-                            <i class="fa-solid fa-user"></i>
-                        </span>
-                        <input type="text" name="name" class="form-control" value="<%= submajor.name %>"
-                            placeholder="Submajor name" required>
-                    </div>
-
-                    <div class="input-group">
-                        <span class="input-group-text">
-                            <i class="fa-solid fa-graduation-cap"></i>
-                        </span>
-                        <select name="major" id="major" class="form-control" required>
-                            <% majors.forEach(majorItem=> { %>
-                                <option value="<%= majorItem._id %>" <%=majorItem._id===submajor.major ? 'selected' : ''
-                                    %>>
-                                    <%= majorItem.name %>
-                                </option>
-                                <% }); %>
-                        </select>
-                    </div>
-
-                    <div class="input-group">
-                        <span class="input-group-text">
-                            <i class="fa-solid fa-calendar"></i>
-                        </span>
-                        <div class="form-control">
-                            <label class="h6 fw-bold">Select Years:</label>
-                            <ul class="list-unstyled">
-                                <% years.forEach(year=> { %>
-                                    <li>
-                                        <input type="checkbox" name="years" value="<%= year._id %>"
-                                            id="year-<%= year.name %>" <%=submajor.years.some(subYear=>
-                                        subYear._id.toString() === year._id.toString()) ? 'checked' : '' %>>
-                                        <label for="year-<%= year.name %>">
-                                            <%= year.name %>
-                                        </label>
-                                    </li>
-                                    <% }); %>
-                            </ul>
+                    <% if (error) { %>
+                        <div class="alert alert-danger">
+                            <%= error %>
                         </div>
-                    </div>
+                        <% } %>
+                            <div class="input-group">
+                                <span class="input-group-text">
+                                    <i class="fa-solid fa-user"></i>
+                                </span>
+                                <input type="text" name="name" class="form-control" value="<%= submajor.name %>"
+                                    placeholder="Submajor name" required>
+                            </div>
 
-                    <button type="submit" class="btn btn-primary login-btn">Update Submajor</button>
-                    <p class="form-text">Want to go back? <a href="/dashboard/major/<%= major._id %>/years" class="
+                            <div class="input-group">
+                                <span class="input-group-text">
+                                    <i class="fa-solid fa-graduation-cap"></i>
+                                </span>
+                                <select name="major" id="major" class="form-control" required>
+                                    <% majors.forEach(majorItem=> { %>
+                                        <option value="<%= majorItem._id %>" <%=majorItem._id===submajor.major
+                                            ? 'selected' : '' %>>
+                                            <%= majorItem.name %>
+                                        </option>
+                                        <% }); %>
+                                </select>
+                            </div>
+
+                            <div class="input-group">
+                                <span class="input-group-text">
+                                    <i class="fa-solid fa-calendar"></i>
+                                </span>
+                                <div class="form-control">
+                                    <label class="h6 fw-bold">Select Years:</label>
+                                    <ul class="list-unstyled">
+                                        <% years.forEach(year=> { %>
+                                            <li>
+                                                <input type="checkbox" name="years" value="<%= year._id %>"
+                                                    id="year-<%= year.name %>" <%=submajor.years.some(subYear=>
+                                                subYear._id.toString() === year._id.toString()) ? 'checked' : ''
+                                                %>>
+                                                <label for="year-<%= year.name %>">
+                                                    <%= year.name %>
+                                                </label>
+                                            </li>
+                                            <% }); %>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary login-btn">Update Submajor</button>
+                            <p class="form-text">Want to go back? <a href="/dashboard/major/<%= major._id %>/years"
+                                    class="
                         form-link">View
-                            Submajors</a></p>
+                                    Submajors</a></p>
                 </form>
             </div>
         </section>

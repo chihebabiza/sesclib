@@ -10,8 +10,9 @@ exports.addDocuments = async (req, res) => {
 
         const documents = req.files;
 
-        if (!documents || documents.length === 0) {
-            return res.status(400).send('No files were uploaded.');
+        if (!type || !documents || documents.length === 0) {
+            req.flash('error', 'All fields are required .');
+            return res.redirect(`/dashboard/subject/${subjectId}/document/add`);
         }
 
         for (const file of documents) {
@@ -26,10 +27,11 @@ exports.addDocuments = async (req, res) => {
             await newDocument.save();
         }
 
-        res.redirect(`/dashboard/subject/${subjectId}/documents?success=DocumentsAdded`);
+        res.redirect(`/dashboard/subject/${subjectId}/documents`);
     } catch (error) {
         console.error('Error adding documents:', error);
-        res.render('user/error', { message: 'An unexpected error occurred. Please try again later.' });
+        req.flash('error', 'Error adding documents. Please try again later.');
+        res.redirect(`/dashboard/subject/${subjectId}/document/add`);
     } finally {
         await disconnectDB();
     }

@@ -5,7 +5,13 @@
             <div class="alert alert-danger" role="alert">
                 <%= message %>
             </div>
-            <a href="/" class="btn btn-primary">Go to Home</a>
+            <% if (!session.user) { %>
+                <a href="/" class="btn btn-primary">Go to Home</a>
+                <% } else if (session.user.type==='user' ) { %>
+                    <a href="/" class="btn btn-primary">Go to Home</a>
+                    <% } else if (session.user.type==='admin' ) { %>
+                        <a href="/dashboard" class="btn btn-primary">Go to Dashboard</a>
+                        <% } %>
         </div>
     </body>
 

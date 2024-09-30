@@ -13,20 +13,20 @@
 
 <h2 id="features">Features</h2>
 <ul>
-    <li>Browse and search for educational resources, including Courses, TDs, TPs, Exams, and more.</li>
-    <li>User authentication for a personalized experience.</li>
-    <li>Responsive design for both mobile and desktop users.</li>
+    <li><strong>Resource Browsing:</strong> Browse and search for educational resources, including Courses, TDs, TPs, Exams, and more.</li>
+    <li><strong>User Authentication:</strong> Secure user login for a personalized experience and access to saved materials.</li>
+    <li><strong>Responsive Design:</strong> Optimized for both mobile and desktop users to ensure a seamless experience.</li>
 </ul>
 
 <h2 id="technologies">Technologies</h2>
 <ul>
-    <li>Node.js</li>
-    <li>Express.js</li>
-    <li>MongoDB</li>
-    <li>HTML</li>
-    <li>CSS</li>
-    <li>JavaScript</li>
-    <li>Bootstrap</li>
+    <li><strong>Node.js:</strong> JavaScript runtime used for building scalable applications.</li>
+    <li><strong>Express.js:</strong> Web framework for Node.js, simplifying server creation.</li>
+    <li><strong>MongoDB:</strong> NoSQL database for storing user data and educational resources.</li>
+    <li><strong>HTML:</strong> Structure of the web pages.</li>
+    <li><strong>CSS:</strong> Styling the application to make it visually appealing.</li>
+    <li><strong>JavaScript:</strong> Adds interactivity and dynamic features to the web pages.</li>
+    <li><strong>Bootstrap:</strong> CSS framework used for responsive design and layout.</li>
 </ul>
 
 <h2 id="installation">Installation</h2>
@@ -34,14 +34,21 @@
     <li>Clone the repository: <code>git clone https://github.com/yourusername/sesclib.git</code></li>
     <li>Navigate to the project directory: <code>cd sesclib</code></li>
     <li>Install the required dependencies: <code>npm install</code></li>
-    <li>Create <code>.env</code> file and use the <code>.env.example</code> file as a template for adding your MongoDB connection.</li>
-    <li>Create a database and link the project.</li>
-    <li>Export the collections into your database.</li>
+    <li>Create <code>.env</code> file using the <code>.env.example</code> file as a template for adding your MongoDB connection.</li>
+    <li>Create a MongoDB database and link it to the project. You can use tools like MongoDB Compass or MongoDB shell commands.</li>
+    <li>Export the collections into your database. Instructions for this can usually be found in the project's documentation.</li>
     <li>Start the server: <code>npm start</code></li>
     <li>Open your web browser and go to <code>http://localhost:4000</code> to access the library.</li>
 </ol>
 
 <h2 id="contributing">Contributing</h2>
+<p>If you would like to contribute to the project, please follow these guidelines:</p>
+<ul>
+    <li>Fork the repository and create a new branch for your feature or bugfix.</li>
+    <li>Make your changes and ensure everything works as expected.</li>
+    <li>Submit a pull request with a description of your changes.</li>
+</ul>
+
 <p>For support or questions about the application, please contact <a href="mailto:chihababiza@gmail.com">chihababiza@gmail.com</a>.</p>
 
 <h2 id="contact">Contact</h2>

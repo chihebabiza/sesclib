@@ -49,7 +49,10 @@
     <li>Submit a pull request with a description of your changes.</li>
 </ul>
 
-<p>For support or questions about the application, please contact <a href="mailto:chihababiza@gmail.com">chihababiza@gmail.com</a>.</p>
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+
 
 <h2 id="contact">Contact</h2>
 <p>For any inquiries or collaboration opportunities, feel free to contact me via email at <a href="mailto:chihababiza@gmail.com">chihababiza@gmail.com</a> or reach out to me on Instagram <a href="https://www.instagram.com/chiheb_abiza_/">@chiheb_abiza_</a>.</p>

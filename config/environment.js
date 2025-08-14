@@ -26,7 +26,7 @@ const config = {
         fileUploadSizeLimit: 10 * 1024 * 1024, // 10MB
         sessionMaxAge: 24 * 60 * 60 * 1000, // 24 hours
         cors: {
-            origin: process.env.ALLOWED_ORIGINS ? process.env.ALLOWED_ORIGINS.split(',') : ['https://your-frontend-domain.com'],
+            origin: process.env.ALLOWED_ORIGINS ? process.env.ALLOWED_ORIGINS.split(',') : ['https://sesclib.onrender.com'],
             credentials: true
         }
     },
